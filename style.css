@@ -1,0 +1,70 @@
+/*==================================================================================================== 
+    START ==> :ROOT
+==================================================================================================== */
+:root {
+
+    /*============================================================ 
+        :ROOT - BASICS
+    ============================================================ */
+    /*Basics - for Container*/
+    --stdMargin: 4rem;
+    --stdPadding: 1rem;
+    --stdRadius: 0.5rem;
+    --stdGap: 1.5rem;
+
+    /*Basics for InteractiveElements (Link / Button / Input) */
+    --stdPaddingInteractiveElements: 0.5rem 2rem;
+    --stdRadiusInteractiveElements: 0.5rem;
+}
+
+/*==================================================================================================== 
+    END ==> :ROOT
+==================================================================================================== */
+
+
+/*==================================================================================================== 
+    GLOBAL ==> USEFUL CLASSES
+==================================================================================================== */
+.contentLimit {
+    width: 100%;
+    min-width: 320px;
+    max-width: 1440px;
+}
+
+.d_none {
+    display: none;
+}
+
+.darkmode {
+    color: var(--clrTextDefaultInDarkMode);
+    background-color: var(--clrBGDefaultInDarkMode);
+}
+
+/*BASIC FLEXBOX KLASSEN ==> x=xAchse / y=yAchse / C = Center */
+.flexROW_xC {
+    display: flex;
+    justify-content: center;
+}
+
+.flexROW__xCyC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexCOLUMN_xC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexCOLUMN_xCyC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*==================================================================================================== 
+    END ==> GLOBAL
+==================================================================================================== */

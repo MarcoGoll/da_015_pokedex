@@ -1,0 +1,104 @@
+    :root {
+        /*============================================================ 
+        :ROOT - FONTS
+    ============================================================ */
+        --fontFamilyHeadlines: Arial,
+            Helvetica,
+            sans-serif;
+        --fontFamilyDefault: Verdana,
+            Geneva,
+            Tahoma,
+            sans-serif;
+        /*TODO: CHOOSE A FONT SIZE BLOCK: DEPENDING ON YOUR USE CASE*/
+        /*========================================
+    FONT SIZES - AS NUMERIC STRUCTURE
+    ========================================*/
+        /* 12px */
+        --font-size-300: 0.75rem;
+        /* 16px, base */
+        --font-size-400: 1rem;
+        /* 20px */
+        --font-size-500: 1.25rem;
+        /* 24px */
+        --font-size-600: 1.5rem;
+        /* 28px */
+        --font-size-700: 1.75rem;
+        /* 32px */
+        --font-size-800: 2rem;
+        /* 36px */
+        --font-size-900: 2.25rem;
+        /*========================================
+    FONT SIZES - AS A TYPICAL STRUCTURE FOR WEBPAGES
+    USAGE:
+     ==> "...Default..." for Text and Inputs
+     ==> "...Sec..." e.g. Imagedescription (add italic and a lighter color) 
+     ==> "...Tertiary..." e.g. Tables
+     ========================================*/
+        /*====================
+    FONT SIZES - TEXT HEAVY PAGES 
+    ====================#/
+    /*MOBILE*/
+        /*40px - Use between 28px-40px*/
+        --fsMobileH1: 2.5rem;
+        /*32px*/
+        --fsMobileH2: 2rem;
+        /*28px*/
+        --fsMobileH3: 1.75rem;
+        /*24px*/
+        --fsMobileH4: 1.5rem;
+        /*20px - Use between 16px-20px*/
+        --fsMobileDefault: 1.25rem;
+        /*18px - Use 2px smaller than default*/
+        --fsMobileSec: 1.125rem;
+        /*16px*/
+        --fsMobileTertiary: 1rem;
+        /*DESKTOP*/
+        /*48px - Use between 35px-50px*/
+        --fsDesktopH1: 3rem;
+        /*40px*/
+        --fsDesktopH2: 2.5rem;
+        /*36px*/
+        --fsDesktopH3: 2.25rem;
+        /*32px*/
+        --fsDesktopH4: 2rem;
+        /*24px*- Use between 18px-24px*/
+        --fsDesktopDefault: 1.5rem;
+        /*22px* - Use 2px smaller than default*/
+        --fsDesktopSec: 1.375rem;
+        /*20px*/
+        --fsDesktopTertiary: 1.25rem;
+        /*====================
+    FONT SIZES - INTERACTION HEAVY
+    ====================*/
+        /*Mobile*/
+        /*40px*/
+        /*Use between 28px-40px*/
+        --fsMobileH1: 2.5rem;
+        /*32px*/
+        --fsMobileH2: 2rem;
+        /*28px*/
+        --fsMobileH3: 1.75rem;
+        /*24px*/
+        --fsMobileH4: 1.5rem;
+        /*18px* - Use between 16px-18px*/
+        --fsMobileDefault: 1.125rem;
+        /*16px - Use 2px smaller than default*/
+        --fsMobileSec: 1rem;
+        /*14px*/
+        --fsMobileTertiary: 0.875rem;
+        /*Desktop*/
+        /*48px* - Use between 35px-50px*/
+        --fsDesktopH1: 3rem;
+        /*40px*/
+        --fsDesktopH2: 2.5rem;
+        /*36px*/
+        --fsDesktopH3: 2.25rem;
+        /*32px*/
+        --fsDesktopH4: 2rem;
+        /*20px* - Use between 14px-20px*/
+        --fsDesktopDefault: 1.25rem;
+        /*18px* - Use 2px smaller than default*/
+        --fsDesktopSec: 1.125rem;
+        /*16px*/
+        --fsDesktopTertiary: 1rem;
+    }

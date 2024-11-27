@@ -1,0 +1,104 @@
+:root {
+    /*============================================================ 
+        :ROOT - COLOURS
+    ============================================================ */
+    /*Text AND Background's (BG)*/
+
+    /*LightMode (Default)*/
+    /*Default Text and Background InLightMode*/
+    --clrTextDefaultInLightMode: black;
+    --clrBGDefaultInLightMode: white;
+    /*Text interactive Elements in LightMode*/
+    --clrTextLinkInLightMode: black;
+    --clrTextBtnInLightMode: black;
+    --clrTextCtaInLightMode: black;
+    /*Background interactive Elements in LightMode*/
+    --clrBGLinkInLightMode: rgb(55, 0, 255);
+    --clrBGBtnInLightMode: rgb(55, 0, 255);
+    --clrBGCtaInLightMode: rgb(0, 255, 98);
+    --clrBGLinkHoverInLightMode: rgb(105, 63, 255);
+    --clrBGBtnHoverInLightMode: rgb(105, 63, 255);
+    --clrBGCtaHoverInLightMode: rgb(76, 255, 145);
+    /*TODO:--clrContainerBackgroundInLightMode: <transparen>;*/
+
+    /*DarkMode*/
+    /*Default Text and Background InDarkMode*/
+    --clrTextDefaultInDarkMode: white;
+    --clrBGDefaultInDarkMode: black;
+    /*Text interactive Elements in LightMode*/
+    --clrTextLinkInDarkMode: white;
+    --clrTextBtnInDarkMode: white;
+    --clrTextCtaInDarkMode: white;
+    /*Background interactive Elements in LightMode*/
+    --clrBGLinkInDarkMode: grey;
+    --clrBGBtnInDarkMode: grey;
+    --clrBGCtaInDarkMode: grey;
+    --clrBGLinkHoverInDarkMode: lightgrey;
+    --clrBGBtnHoverInDarkMode: lightgrey;
+    --clrBGCtaHoverInDarkMode: lightgrey;
+    /*TODO:--clrContainerBackgroundInLightMode: <transparen>;*/
+
+    /*Primary Color*/
+    --clrPrim95: #e6f7fe;
+    --clrPrim90: #cdeefe;
+    --clrPrim85: #b4e6fd;
+    --clrPrim80: #9cdefc;
+    --clrPrim75: #83d5fc;
+    --clrPrim70: #6acdfb;
+    --clrPrim65: #51c5fb;
+    --clrPrim60: #38bdfa;
+    --clrPrim55: #1fb4f9;
+    --clrPrim50: #06acf9;
+    --clrPrim45: #069be0;
+    --clrPrim40: #058ac7;
+    --clrPrim35: #0478ae;
+    --clrPrim30: #046795;
+    --clrPrim25: #03567c;
+    --clrPrim20: #034563;
+    --clrPrim15: #02334a;
+    --clrPrim10: #012232;
+    --clrPrim5: #011119;
+
+    /*Secondary Color*/
+    --clrSec95: #e9f8fb;
+    --clrSec90: #d4f0f7;
+    --clrSec85: #bee9f4;
+    --clrSec80: #a8e1f0;
+    --clrSec75: #93daec;
+    --clrSec70: #7dd3e8;
+    --clrSec65: #67cbe4;
+    --clrSec60: #52c4e0;
+    --clrSec55: #3cbcdd;
+    --clrSec50: #26b5d9;
+    --clrSec45: #22a3c3;
+    --clrSec40: #1f91ad;
+    --clrSec35: #1b7f98;
+    --clrSec30: #176d82;
+    --clrSec25: #135b6c;
+    --clrSec20: #0f4857;
+    --clrSec15: #0b3641;
+    --clrSec10: #08242b;
+    --clrSec5: #041216;
+
+
+    /*Accent Color*/
+    --clrAcc95: #fff8e6;
+    --clrAcc90: #fff1cc;
+    --clrAcc85: #ffe9b3;
+    --clrAcc80: #ffe299;
+    --clrAcc75: #ffdb80;
+    --clrAcc70: #ffd466;
+    --clrAcc65: #ffcc4d;
+    --clrAcc60: #ffc533;
+    --clrAcc55: #ffbe1a;
+    --clrAcc50: #ffb700;
+    --clrAcc45: #e6a400;
+    --clrAcc40: #cc9200;
+    --clrAcc35: #b38000;
+    --clrAcc30: #996e00;
+    --clrAcc25: #805b00;
+    --clrAcc20: #664900;
+    --clrAcc15: #4d3700;
+    --clrAcc10: #332500;
+    --clrAcc5: #1a1200;
+}
