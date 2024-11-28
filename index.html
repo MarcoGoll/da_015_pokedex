@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="icon" href="./assets/img/logo.svg" type="image/x-icon" />
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/basics.css">
@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/aside.css">
     <link rel="stylesheet" href="./styles/footer.css">
 
     <link rel="stylesheet" href="./styles/displaySizes/tablet_768-1023.css">
@@ -31,16 +30,15 @@
     <header class="flexROW__xCyC">
         <div class="contentLimit content__Header">
             <!-- Add Contend here -->
-            <img id="logoHeader" src="./assets/img/logo.svg" alt="logo">
-            <nav>
-                <a href="#">NAVLINK1</a>
-                <a href="#">NAVLINK2</a>
-                <a href="#">NAVLINK3</a>
-                <a href="#">NAVLINK4</a>
-                <button class="cta">cta</button>
-            </nav>
+            <img id="logoImgHeader" src="./assets/img/logo.png" alt="logo">
+            <span id="logoTextHeader">Pokedex</span>
+            <div class="searchArea">
+                <input id="searchInput" type="text" placeholder="Search for a Pokemon ...">
+                <button id="searchBtn"><img src="./assets/icons/googleFontsIcons/search.svg" alt="Lupe"></button>
+            </div>
+            <!-- TODO: Delete if there should be no darkmode
             <button id="btnDarkmode" onclick="switchDarkmode()"><img src="./assets/icons/googleFontsIcons/moon.svg"
-                    alt="Moon"></button>
+                    alt="Moon"></button> -->
         </div>
     </header>
     <main>
@@ -52,33 +50,16 @@
                 <button class="cta">ich bin ein cta</button>
                 <div class="test"></div>
             </div>
-        </section>
-        <!-- Add more Sections here -->
-        <section class="section__X flexROW__xCyC">
-            <div class="contentLimit content__section__X">
-                <!-- Add Contend here -->
-            </div>
+            <div style="width: 500px; height: 1000px;"></div>
         </section>
     </main>
-    <aside>
-        <section class="section__B flexROW__xCyC">
-            <div class="contentLimit content__section__B">
-                <!-- Add Contend here -->
-            </div>
-        </section>
-        <!-- Add more Sections here -->
-        <section class="section__Y flexROW__xCyC">
-            <div class="contentLimit content__section__Y">
-                <!-- Add Contend here -->
-            </div>
-        </section>
-    </aside>
     <footer class="flexROW__xCyC">
         <div class="contentLimit content__Footer">
             <!-- Add Contend here -->
         </div>
     </footer>
-    <button onclick="topFunction()" id="goTopBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="goTopBtn" title="Go to top"><img
+            src="./assets/icons/googleFontsIcons/up_double.svg" alt="Top"></button>
 </body>
 
 </html>

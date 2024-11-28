@@ -99,21 +99,11 @@ a {
     border-radius: var(--stdRadiusInteractiveElements);
     color: var(--clrTextLinkInLightMode);
     background-color: var(--clrBGLinkInLightMode);
+    cursor: pointer;
+    transition: var(--stdTransition);
 }
 
 a:hover {
-    background-color: var(--clrBGLinkHoverInLightMode);
-}
-
-nav a {
-    text-decoration: none;
-    padding: var(--stdPaddingInteractiveElements);
-    border-radius: var(--stdRadiusInteractiveElements);
-    color: var(--clrTextLinkInLightMode);
-    background-color: var(--clrBGLinkInLightMode);
-}
-
-nav a:hover {
     background-color: var(--clrBGLinkHoverInLightMode);
 }
 
@@ -123,25 +113,17 @@ button {
     border-radius: var(--stdRadiusInteractiveElements);
     color: var(--clrTextBtnInLightMode);
     background-color: var(--clrBGBtnInLightMode);
+    cursor: pointer;
+    transition: var(--stdTransition);
 }
 
 button:hover {
     background-color: var(--clrBGBtnHoverInLightMode);
 }
 
-.cta {
-    padding: var(--stdPaddingInteractiveElements);
-    border-radius: var(--stdRadiusInteractiveElements);
-    color: var(--clrTextCtaInLightMode);
-    background-color: var(--clrBGCtaInLightMode);
-}
-
-.cta:hover {
-    background-color: var(--clrBGCtaHoverInLightMode);
-}
-
-input,
-textarea {
+input {
     font-size: var(--fsDesktopDefault);
     padding: var(--stdPaddingInteractiveElements);
+    border-radius: var(--stdRadiusInteractiveElements);
+    transition: var(--stdTransition);
 }

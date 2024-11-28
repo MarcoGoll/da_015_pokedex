@@ -11,10 +11,11 @@
     --stdPadding: 1rem;
     --stdRadius: 0.5rem;
     --stdGap: 1.5rem;
+    --stdTransition: all 200ms ease-in-out;
 
     /*Basics for InteractiveElements (Link / Button / Input) */
     --stdPaddingInteractiveElements: 0.5rem 2rem;
-    --stdRadiusInteractiveElements: 0.5rem;
+    --stdRadiusInteractiveElements: 0.8rem;
 }
 
 /*==================================================================================================== 
