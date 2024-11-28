@@ -9,7 +9,7 @@ const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sp
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen sie es Später wieder.";
 const LIGHTOPACITY = "0.1";
 const DARKOPACITY = "0.9";
-const LOADAMOUNT = 30;
+const LOADAMOUNT = 50;
 const TYPES = [
     {
         "typeName": "normal",
@@ -180,8 +180,10 @@ async function renderCards_Amount(start, amount){
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length>1){
                 cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
+                setBackGroundColor(i, arrayOfTypeIds);
             }else{
                 cardsContainerRef.innerHTML += getHTMLForCardWithOneType(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
+                setBackGroundColor(i, arrayOfTypeIds);
             }
         }
     }
@@ -237,6 +239,18 @@ function getTypeIds(pokemon){
          });
     }
     return foundIds;
+}
+
+function setBackGroundColor(index, arrayOfTypeIds){
+    let cardRef = document.getElementById("card"+index);
+    if (arrayOfTypeIds.length>1){
+        //TwoBackground
+        cardRef.style.background = `linear-gradient(160deg, ${TYPES[arrayOfTypeIds[0]-1].lightColorCode} 0%, ${TYPES[arrayOfTypeIds[0]-1].darkColorCode} 50%, ${TYPES[arrayOfTypeIds[1]-1].lightColorCode} 65%, ${TYPES[arrayOfTypeIds[1]-1].darkColorCode} 100%)`;
+        
+    }else{
+        //OneBackground
+        cardRef.style.background = `linear-gradient(120deg, ${TYPES[arrayOfTypeIds[0]-1].lightColorCode} 0%, ${TYPES[arrayOfTypeIds[0]-1].darkColorCode} 100%)`;
+    }
 }
 
 function reset(){
