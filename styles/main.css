@@ -4,6 +4,7 @@
 main {
     position: relative;
     top: 10vh;
+    min-height: 90vh;
     /* 1:1 height from header */
 }
 

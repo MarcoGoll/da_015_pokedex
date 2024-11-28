@@ -17,11 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: var(--stdPadding);
+    gap: 8px;
 }
 
 #logoImgHeader {
-    height: 100%;
-    padding: var(--stdPadding);
+    height: 60px;
+    width: 60px;
 }
 
 #logoTextHeader {
