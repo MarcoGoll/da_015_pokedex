@@ -29,6 +29,7 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /*auto-fit ==> Browser decides how many collums are possible / minmax(minvalue column with, maxvalue column width)*/
     gap: 16px;
+    justify-items: center;
 }
 
 

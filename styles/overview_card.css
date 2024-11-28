@@ -31,10 +31,12 @@
 
 .card__Types {
     display: flex;
+    gap: 8px;
 }
 
 .type__Img {
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 150px;
 }
 
 .card__No {
