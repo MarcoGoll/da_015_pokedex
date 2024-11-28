@@ -68,7 +68,9 @@ body {
     font-family: var(--fontFamilyDefault);
     font-size: var(--fsDesktopDefault);
     background-color: var(--clrBGDefaultInLightMode);
+    background-image: url(../assets/background/svgbackgrounds/confetti-doodles.svg);
 }
+
 
 h1,
 h2,
