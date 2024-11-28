@@ -9,26 +9,28 @@ main {
 }
 
 /*============================================================ 
-    SECTION A
+    SECTION: section__pokemons
 ============================================================ */
-.section__A {
+.section__pokemons {
     /* add specific design for section background here */
 }
 
-.content__section__A {
+.content__section__pokemons {
     /* add specific design for section content here */
+    padding: var(--stdPadding);
 }
 
-/*============================================================ 
-    SECTION X
-============================================================ */
-.section__X {
-    /* add specific design for section background here */
+h1 {
+    text-align: center;
 }
 
-.content__section__X {
-    /* add specific design for section content here */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /*auto-fit ==> Browser decides how many collums are possible / minmax(minvalue column with, maxvalue column width)*/
+    gap: 16px;
 }
+
 
 /*==================================================================================================== 
     END ==> MAIN

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    <title> Pokédex</title>
     <link rel="icon" href="./assets/img/logo.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="./style.css">
@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="./styles/displaySizes/mobileM_375-424.css">
     <link rel="stylesheet" href="./styles/displaySizes/mobileS_374_and_smaller.css">
 
+    <link rel="stylesheet" href="./styles/overview_card.css">
+
     <script src="./script.js" defer></script>
     <script src="./scripts/basics.js" defer></script>
 </head>
@@ -29,9 +31,8 @@
 <body id="body">
     <header class="flexROW__xCyC">
         <div class="contentLimit content__Header">
-            <!-- Add Contend here -->
             <img id="logoImgHeader" src="./assets/img/logo.png" alt="logo">
-            <span id="logoTextHeader">Pokedex</span>
+            <span id="logoTextHeader"> Pokédex</span>
             <div class="searchArea">
                 <input id="searchInput" type="text" placeholder="Search for a Pokemon ...">
                 <button id="searchBtn"><img src="./assets/icons/googleFontsIcons/search.svg" alt="Lupe"></button>
@@ -42,9 +43,100 @@
         </div>
     </header>
     <main>
-        <section class="section__A flexROW__xCyC">
-            <div class="contentLimit content__section__A">
-                <!-- Add Contend here -->
+        <section class="section__pokemons flexROW__xCyC">
+            <div class="contentLimit content__section__pokemons">
+                <h1>Pokémon</h1>
+                <div class="cards" id="cardsContainer">
+                    <!-- Add Cards here -->
+
+                    <div class="card" id="card1">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                            alt="" class="card__Img" id="card__Img1">
+                        <p class="card__No" id="card__No1">No #1</p>
+                        <p class="card__Name" id="card__Name1">bulbasaur</p>
+                        <div class="card__Types" id="card__Types1">
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/1.png"
+                                    alt="" class="type__Img" id="type__Img11">
+                            </div>
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/2.png"
+                                    alt="" class="type__Img" id="type__Img12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="card2">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+                            alt="" class="card__Img" id="card__Img2">
+                        <p class="card__No" id="card__No2">No# 2</p>
+                        <p class="card__Name" id="card__Name2">ivysaur</p>
+                        <div class="card__Types" id="card__Types2">
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/3.png"
+                                    alt="" class="type__Img" id="type__Img21">
+                            </div>
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/4.png"
+                                    alt="" class="type__Img" id="type__Img22">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="card2">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+                            alt="" class="card__Img" id="card__Img2">
+                        <p class="card__No" id="card__No2">No# 2</p>
+                        <p class="card__Name" id="card__Name2">ivysaur</p>
+                        <div class="card__Types" id="card__Types2">
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/3.png"
+                                    alt="" class="type__Img" id="type__Img21">
+                            </div>
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/4.png"
+                                    alt="" class="type__Img" id="type__Img22">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="card2">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+                            alt="" class="card__Img" id="card__Img2">
+                        <p class="card__No" id="card__No2">No# 2</p>
+                        <p class="card__Name" id="card__Name2">ivysaur</p>
+                        <div class="card__Types" id="card__Types2">
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/3.png"
+                                    alt="" class="type__Img" id="type__Img21">
+                            </div>
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/4.png"
+                                    alt="" class="type__Img" id="type__Img22">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card" id="card2">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+                            alt="" class="card__Img" id="card__Img2">
+                        <p class="card__No" id="card__No2">No# 2</p>
+                        <p class="card__Name" id="card__Name2">ivysaur</p>
+                        <div class="card__Types" id="card__Types2">
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/3.png"
+                                    alt="" class="type__Img" id="type__Img21">
+                            </div>
+                            <div class="card__type">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/4.png"
+                                    alt="" class="type__Img" id="type__Img22">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </section>
     </main>

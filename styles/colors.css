@@ -7,19 +7,15 @@
     /*LightMode (Default)*/
     /*Default Text and Background InLightMode*/
     --clrTextDefaultInLightMode: black;
-    --clrBGDefaultInLightMode: white;
+    --clrBGDefaultInLightMode: rgb(240, 240, 240);
     /*Text interactive Elements in LightMode*/
     --clrTextLinkInLightMode: black;
     --clrTextBtnInLightMode: black;
-    --clrTextCtaInLightMode: black;
     /*Background interactive Elements in LightMode*/
     --clrBGLinkInLightMode: rgb(55, 0, 255);
     --clrBGBtnInLightMode: rgb(55, 0, 255);
-    --clrBGCtaInLightMode: rgb(0, 255, 98);
     --clrBGLinkHoverInLightMode: rgb(105, 63, 255);
     --clrBGBtnHoverInLightMode: rgb(105, 63, 255);
-    --clrBGCtaHoverInLightMode: rgb(76, 255, 145);
-    /*TODO:--clrContainerBackgroundInLightMode: <transparen>;*/
 
     /*DarkMode*/
     /*Default Text and Background InDarkMode*/
@@ -28,15 +24,11 @@
     /*Text interactive Elements in LightMode*/
     --clrTextLinkInDarkMode: white;
     --clrTextBtnInDarkMode: white;
-    --clrTextCtaInDarkMode: white;
     /*Background interactive Elements in LightMode*/
     --clrBGLinkInDarkMode: grey;
     --clrBGBtnInDarkMode: grey;
-    --clrBGCtaInDarkMode: grey;
     --clrBGLinkHoverInDarkMode: lightgrey;
     --clrBGBtnHoverInDarkMode: lightgrey;
-    --clrBGCtaHoverInDarkMode: lightgrey;
-    /*TODO:--clrContainerBackgroundInLightMode: <transparen>;*/
 
     /*Primary Color*/
     --clrPrim95: #e6f7fe;
