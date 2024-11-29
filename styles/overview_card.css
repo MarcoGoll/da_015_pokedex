@@ -21,11 +21,13 @@
     transition: var(--stdTransition);
     position: relative;
     cursor: pointer;
-
+    filter: brightness(95%);
 }
 
 .card:hover {
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.1) translateY(-5px) rotate(1deg);
+    filter: brightness(110%);
+
     /* transform: translateY(-5px);
     transform: translateX(5px);
     border-bottom: 20px solid black;
