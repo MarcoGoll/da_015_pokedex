@@ -6,10 +6,10 @@ const URL_TYPE10001UNKNOWN = "https://raw.githubusercontent.com/PokeAPI/sprites/
 const URL_ALLPOKEMON = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100000";
 const URL_POKEMONVIAID = "https://pokeapi.co/api/v2/pokemon/";
 const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/";
-const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen sie es Später wieder.";
-const LIGHTOPACITY = "0.1";
-const DARKOPACITY = "0.9";
-const LOADAMOUNT = 50;
+const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
+const LIGHTOPACITY = "0.6";
+const DARKOPACITY = "1";
+const LOADAMOUNT = 30;
 const TYPES = [
     {
         "typeName": "normal",
@@ -138,9 +138,12 @@ const TYPES = [
         "darkColorCode" : `rgba(0,0,0,${DARKOPACITY})`
     }
 ];
+
 let allPokemons =[]; // {name, url}
 let loadetPokemons = []; // detailinfos
 let currentlyRendertCounter = 0;
+let cardsContainerRef = document.getElementById('cardsContainer');
+    
 
 /*====================================================================================================
     FUNCTIONS
@@ -155,54 +158,27 @@ let currentlyRendertCounter = 0;
 */
 async function init(){
     await setAllPokemons();
+    cardsContainerRef.innerHTML="";
     renderCards_Amount(currentlyRendertCounter,LOADAMOUNT);
 }
 
-/**
-* Description for the function
-* @param {string} <variableName> Desription for the usage of a parameter
-* @param {number} <variableName> Desription for the usage of a parameter
-* @param {(string|Array)} <variableName> Desription for the usage of a parameter
-* @param {(number|Array)} <variableName> Desription for the usage of a parameter
-* @returns {(string|Array)} <variableName> Desription for the return variable/value
-*/
-async function renderCards_Amount(start, amount){
-    console.log(amount);
-    console.log(allPokemons);
-    console.log(currentlyRendertCounter);
-    
+async function renderCards_Amount(start, amount){   
     await setPokemonDetails(start, amount);
-    let cardsContainerRef = document.getElementById('cardsContainer');
-    cardsContainerRef.innerHTML="";
     for (let i = start; i < (start+amount); i++){
         if(!(start+amount > allPokemons.length)){
             currentlyRendertCounter++;
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length>1){
                 cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
-                setBackGroundColor(i, arrayOfTypeIds);
+                setBackGroundColorCard(i, arrayOfTypeIds);
             }else{
                 cardsContainerRef.innerHTML += getHTMLForCardWithOneType(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
-                setBackGroundColor(i, arrayOfTypeIds);
+                setBackGroundColorCard(i, arrayOfTypeIds);
             }
         }
     }
 }
 
-function renderCards_Ids(array){
-    console.log(amount);
-    console.log(allPokemons);
-    console.log(currentlyRendertCounter);
-}
-
-/**
-* Description for the function
-* @param {string} <variableName> Desription for the usage of a parameter
-* @param {number} <variableName> Desription for the usage of a parameter
-* @param {(string|Array)} <variableName> Desription for the usage of a parameter
-* @param {(number|Array)} <variableName> Desription for the usage of a parameter
-* @returns {(string|Array)} <variableName> Desription for the return variable/value
-*/
 async function setAllPokemons(){
     try {
         let listOfAllPokemon = await fetch(URL_ALLPOKEMON);
@@ -241,7 +217,7 @@ function getTypeIds(pokemon){
     return foundIds;
 }
 
-function setBackGroundColor(index, arrayOfTypeIds){
+function setBackGroundColorCard(index, arrayOfTypeIds){
     let cardRef = document.getElementById("card"+index);
     if (arrayOfTypeIds.length>1){
         //TwoBackground
@@ -251,6 +227,14 @@ function setBackGroundColor(index, arrayOfTypeIds){
         //OneBackground
         cardRef.style.background = `linear-gradient(120deg, ${TYPES[arrayOfTypeIds[0]-1].lightColorCode} 0%, ${TYPES[arrayOfTypeIds[0]-1].darkColorCode} 100%)`;
     }
+}
+
+function loadNextPokemon(){
+    renderCards_Amount(currentlyRendertCounter,LOADAMOUNT)
+}
+
+// TODO: für Suche
+function renderCards_Ids(array){
 }
 
 function reset(){
