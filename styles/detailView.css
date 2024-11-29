@@ -1,0 +1,22 @@
+.detailView {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.detailView__Content {
+    position: fixed;
+    top: 5%;
+    left: auto;
+    right: auto;
+    bottom: 5%;
+    width: 500px;
+    background-color: white;
+    z-index: 99;
+    border-radius: var(--stdRadius);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

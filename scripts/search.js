@@ -37,6 +37,8 @@ function searchPokemon(searchString) {
     for (let i = 0; i < allPokemons.length; i++) {
         if (allPokemons[i].name.includes(searchString)) {
             searchedResult.push(i);
+            //TODO: Geht nicht immer mit i, da manche Pokemon hier abweicheungen haben z.B. "https://pokeapi.co/api/v2/pokemon/10043/"
+            // Wir müssen anstatt dem index die ID ins array pushen
         }
     }
     return searchedResult;

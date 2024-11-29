@@ -5,6 +5,7 @@ const URL_TYPE19STELLAR = "https://raw.githubusercontent.com/PokeAPI/sprites/mas
 const URL_TYPE10001UNKNOWN = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/10001.png";
 const URL_ALLPOKEMON = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100000";
 const URL_POKEMONVIAID = "https://pokeapi.co/api/v2/pokemon/";
+const URL_POKEMONSPECIES = "https://pokeapi.co/api/v2/pokemon-species/";
 const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/";
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
@@ -173,10 +174,10 @@ async function renderCards_Amount(start, amount) {
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length > 1) {
                 cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
-                setBackGroundColorCard(i, arrayOfTypeIds);
+                setBackGroundColorCard(loadetPokemons[i].id, arrayOfTypeIds);
             } else {
                 cardsContainerRef.innerHTML += getHTMLForCardWithOneType(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
-                setBackGroundColorCard(i, arrayOfTypeIds);
+                setBackGroundColorCard(loadetPokemons[i].id, arrayOfTypeIds);
             }
         }
     }
@@ -213,6 +214,15 @@ async function getPokemonById(id) {
     }
 }
 
+async function getPokemonSpeciesById(id) {
+    try {
+        let speciesPokemonX = await fetch(URL_POKEMONSPECIES + id);
+        return await speciesPokemonX.json();
+    } catch (error) {
+        console.error(ERROR_FETCHCATCH);
+    }
+}
+
 function getTypeIds(pokemon) {
     let foundTypes = [];
     pokemon.types.forEach((type, i) => {
@@ -230,8 +240,8 @@ function getTypeIds(pokemon) {
     return foundIds;
 }
 
-function setBackGroundColorCard(index, arrayOfTypeIds) {
-    let cardRef = document.getElementById("card" + index);
+function setBackGroundColorCard(id, arrayOfTypeIds) {
+    let cardRef = document.getElementById("card" + id);
     if (arrayOfTypeIds.length > 1) {
         //TwoBackground
         cardRef.style.background = `linear-gradient(160deg, ${TYPES[arrayOfTypeIds[0] - 1].lightColorCode} 0%, ${TYPES[arrayOfTypeIds[0] - 1].darkColorCode} 50%, ${TYPES[arrayOfTypeIds[1] - 1].lightColorCode} 65%, ${TYPES[arrayOfTypeIds[1] - 1].darkColorCode} 100%)`;
@@ -255,10 +265,10 @@ async function renderCards_Ids(pokemonIds) {
         let arrayOfTypeIds = getTypeIds(searchedPokemon[i]);
         if (arrayOfTypeIds.length > 1) {
             cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
-            setBackGroundColorCard(i, arrayOfTypeIds);
+            setBackGroundColorCard(searchedPokemon[i].id, arrayOfTypeIds);
         } else {
             cardsContainerRef.innerHTML += getHTMLForCardWithOneType(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
-            setBackGroundColorCard(i, arrayOfTypeIds);
+            setBackGroundColorCard(searchedPokemon[i].id, arrayOfTypeIds);
         }
 
     }

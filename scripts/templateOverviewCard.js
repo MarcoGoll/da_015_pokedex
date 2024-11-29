@@ -2,7 +2,7 @@
 
 function getHTMLForCardWithOneType(loadetPokemon, index, typeURL) {
     return `
-                    <div class="card" id="card${index}">
+                    <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <img src="${loadetPokemon.sprites.other['official-artwork'].front_default}"
                             alt="" class="card__Img" id="card__Img${index}">
                         <p class="card__No" id="card__No1">No #${loadetPokemon.id}</p>
@@ -19,7 +19,7 @@ function getHTMLForCardWithOneType(loadetPokemon, index, typeURL) {
 
 function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
     return `
-                    <div class="card" id="card${index}">
+                    <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <img src="${loadetPokemon.sprites.other['official-artwork'].front_default}"
                             alt="" class="card__Img" id="card__Img${index}">
                         <p class="card__No" id="card__No1">No #${loadetPokemon.id}</p>

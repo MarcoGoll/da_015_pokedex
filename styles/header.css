@@ -56,10 +56,12 @@ header {
     justify-content: center;
     align-items: center;
     transition: var(--stdTransition);
+    cursor: default;
+    background-color: transparent;
 }
 
 #searchBtn:hover {
-    background-color: rgb(93, 93, 255);
+    background-color: transparent;
 }
 
 #searchInput.inputValide {

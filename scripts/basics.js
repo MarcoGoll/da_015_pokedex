@@ -6,12 +6,6 @@
 /*================================================*/
 const refGoTopBtn = document.getElementById("goTopBtn");
 
-/*================================================
-    for BASIC FEATURE ==> toogle dark mode
-/*================================================*/
-const refBody = document.getElementById('body');
-const refbtnDarkmode = document.getElementById('btnDarkmode');
-
 /*====================================================================================================
     FUNCTIONS
 ====================================================================================================*/
@@ -41,22 +35,19 @@ function topFunction() {
 }
 
 /*================================================
-    for BASIC FEATURE ==> toogle dark mode
+    for BASIC FEATURE ==> toggleClass
 /*================================================*/
-/*
-* Switch zwischen Darkmode and Lightmode
-*/
-function switchDarkmode() {
-    if (refBody.classList.contains("darkmode")) {
-        //add here properties for lightmode
-        refBody.classList.remove("darkmode");
-        refbtnDarkmode.innerHTML = "<img src='./assets/icons/googleFontsIcons/moon.svg' alt='Moon'>";
 
-    } else {
-        //add here properties for darkmodemode
-        refBody.classList.add("darkmode");
-        refbtnDarkmode.innerHTML = "<img src='./assets/icons/googleFontsIcons/sun.svg' alt='Sun'>";
-    }
+function toggleClass(className, identifier) {
+    let element = document.getElementById(identifier);
+    element.classList.toggle(className);
+}
+
+/**
+* Loads the basket from the Local storage. If it is found, the current basket is replaced by this one 
+*/
+function stopPropagation(event) {
+    event.stopPropagation();
 }
 
 

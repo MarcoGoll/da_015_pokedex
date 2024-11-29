@@ -36,11 +36,12 @@
 
 .card__Img {
     width: 70%;
-    height: 80%;
+    height: 70%;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -70%);
     transition: var(--stdTransition);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .card__Img:hover {

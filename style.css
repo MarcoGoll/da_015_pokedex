@@ -32,10 +32,6 @@
     max-width: 1440px;
 }
 
-.d_none {
-    display: none;
-}
-
 .darkmode {
     color: var(--clrTextDefaultInDarkMode);
     background-color: var(--clrBGDefaultInDarkMode);
@@ -64,6 +60,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.d_none {
+    display: none;
 }
 
 /*==================================================================================================== 
