@@ -125,7 +125,7 @@ button:hover {
 }
 
 input {
-    font-size: var(--fsDesktopDefault);
+    font-size: var(--fsDesktopTertiary);
     padding: var(--stdPaddingInteractiveElements);
     border-radius: var(--stdRadiusInteractiveElements);
     transition: var(--stdTransition);

@@ -9,7 +9,7 @@ const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sp
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
 const DARKOPACITY = "1";
-const LOADAMOUNT = 30;
+const LOADAMOUNT = 20;
 const TYPES = [
     {
         "typeName": "normal",
