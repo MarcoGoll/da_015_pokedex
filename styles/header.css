@@ -37,15 +37,51 @@ header {
 
 #searchInput {
     width: 100%;
+    border: none;
+}
+
+#searchInput:focus {
+    border: none;
+    outline: none;
 }
 
 #searchBtn {
     position: absolute;
-    right: 0;
-    height: 100%;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    padding: 16px;
     border: none;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--stdTransition);
+}
+
+#searchBtn:hover {
+    background-color: rgb(93, 93, 255);
+}
+
+#searchInput.inputValide {
+    outline: 3px solid green;
+    background-color: lightgreen;
+    color: green;
+}
+
+#searchInput.inputInvalide {
+    outline: 3px solid red;
+    background-color: pink;
+    color: red;
+}
+
+.inputValideBtn {
+
+    background-color: green;
+}
+
+.inputInvalideBtn {
+
+    background-color: red;
 }
 
 /*==================================================================================================== 

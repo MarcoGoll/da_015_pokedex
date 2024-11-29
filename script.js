@@ -141,8 +141,11 @@ const TYPES = [
 
 let allPokemons = []; // {name, url}
 let loadetPokemons = []; // detailinfos
+let searchedPokemon = [];
 let currentlyRendertCounter = 0;
 let cardsContainerRef = document.getElementById('cardsContainer');
+let searchMode = false;
+
 
 
 /*====================================================================================================
@@ -200,6 +203,16 @@ async function setPokemonDetails(start, amount) {
     }
 }
 
+async function getPokemonById(id) {
+
+    try {
+        let detailsPokemonX = await fetch(URL_POKEMONVIAID + id);
+        return await detailsPokemonX.json();
+    } catch (error) {
+        console.error(ERROR_FETCHCATCH);
+    }
+}
+
 function getTypeIds(pokemon) {
     let foundTypes = [];
     pokemon.types.forEach((type, i) => {
@@ -234,11 +247,28 @@ function loadNextPokemon() {
 }
 
 // TODO: für Suche
-function renderCards_Ids(array) {
+async function renderCards_Ids(pokemonIds) {
+    searchedPokemon = [];
+    cardsContainerRef.innerHTML = "";
+    for (let i = 0; i < pokemonIds.length; i++) {
+        searchedPokemon.push(await getPokemonById(pokemonIds[i] + 1))
+        let arrayOfTypeIds = getTypeIds(searchedPokemon[i]);
+        if (arrayOfTypeIds.length > 1) {
+            cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
+            setBackGroundColorCard(i, arrayOfTypeIds);
+        } else {
+            cardsContainerRef.innerHTML += getHTMLForCardWithOneType(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
+            setBackGroundColorCard(i, arrayOfTypeIds);
+        }
+
+    }
 }
 
 function reset() {
     currentlyRendertCounter = 0;
+    loadetPokemons = [];
+    cardsContainerRef.innerHTML = "";
+    searchMode = false;
 }
 
 /*====================================================================================================
@@ -248,7 +278,9 @@ function reset() {
 document.addEventListener("scrollend", (event) => {
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100) {
         // you're at the bottom of the page
-        loadNextPokemon();
+        if (searchMode == false) {
+            loadNextPokemon();
+        }
     }
 })
 

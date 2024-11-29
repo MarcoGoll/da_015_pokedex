@@ -26,6 +26,7 @@
 
     <script src="./scripts/templateOverviewCard.js" defer></script>
     <script src="./script.js" defer></script>
+    <script src="./scripts/search.js" defer></script>
     <script src="./scripts/basics.js" defer></script>
 </head>
 
@@ -35,7 +36,8 @@
             <img id="logoImgHeader" src="./assets/img/logo.png" alt="logo">
             <span id="logoTextHeader"> Pokédex</span>
             <div class="searchArea">
-                <input id="searchInput" type="text" placeholder="Search for a Pokemon ...">
+                <input id="searchInput" type="text" placeholder="Search for a Pokemon ..."
+                    onkeyup="initSearchPokemon()">
                 <button id="searchBtn"><img src="./assets/icons/googleFontsIcons/search.svg" alt="Lupe"></button>
             </div>
             <!-- TODO: Delete if there should be no darkmode
