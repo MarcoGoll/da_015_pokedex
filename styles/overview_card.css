@@ -50,9 +50,8 @@
 
 .card__Types {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 8px;
-    padding-inline: 40px;
 }
 
 .type__Img {
