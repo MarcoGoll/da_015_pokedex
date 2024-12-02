@@ -11,16 +11,17 @@ function playCrie(id) {
     crie.play();
 }
 
-function renderDetailView(pokemon, pokemonSpecies) {
+function renderDetailView(pokemon, pokemonSpecies, descriptionText) {
     let detailView__ContentRef = document.getElementById('detailView__Content');
     detailView__ContentRef.innerHTML = "";
-    detailView__ContentRef.innerHTML = getHTMLForDetailView(pokemon, pokemonSpecies);
+    detailView__ContentRef.innerHTML = getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText);
 }
 
 async function loadNextPokemon(id) {
     let pokemon = await getPokemonById(id);
     let pokemonSpecies = await getPokemonSpeciesById(id);
-    renderDetailView(pokemon, pokemonSpecies);
+    let descriptionText = getFlavorText(pokemonSpecies);
+    renderDetailView(pokemon, pokemonSpecies, descriptionText);
     playCrie(id);
     runmove();
 
@@ -42,4 +43,13 @@ async function loadNextPokemon(id) {
     // => https://getbootstrap.com/docs/5.3/components/spinners/
 
 
+}
+
+//gibt den ersten "en" Beschreibungstext aller flavor_text_entries zurück
+function getFlavorText(pokemonSpecies) {
+    for (let i = 0; i < pokemonSpecies.flavor_text_entries.length; i++) {
+        if (pokemonSpecies.flavor_text_entries[i].language.name == "en") {
+            return pokemonSpecies.flavor_text_entries[i].flavor_text.replace("", " ");
+        }
+    }
 }

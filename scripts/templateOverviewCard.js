@@ -42,7 +42,7 @@ function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
     `
 }
 
-function getHTMLForDetailView(pokemon, pokemonSpecies) {
+function getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText) {
     return `
 
             <button type="button" class="btn-close" aria-label="Close"
@@ -89,8 +89,7 @@ function getHTMLForDetailView(pokemon, pokemonSpecies) {
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <p>
-                                    While it is young, it uses the nutrients that are stored in the seed
-                                    on its back in order to grow. TODO:
+                                    ${descriptionText}
                                 </p>
                             </div>
                         </div>
