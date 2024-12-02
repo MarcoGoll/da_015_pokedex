@@ -42,3 +42,129 @@ function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
     `
 }
 
+function getHTMLForDetailView(pokemon, pokemonSpecies) {
+    return `
+      <button type="button" class="btn-close" aria-label="Close"
+                onclick="toggleClass('d_none', 'detailView')"></button>
+            <div class="detailView__Img" id="detailView__Img"><img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
+                    alt="">
+            </div>
+            <div class="mainDetailInfo">
+                <p class="card__No" id="noDetailview">No #${pokemon.id}</p>
+                <p class="card__Name" id="nameDetailview">${pokemon.name}</p>
+                <div class="card__Types" id="typesDetailview">
+                    <div class="card__type">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/12.png"
+                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
+                    </div>
+                    <div class="card__type">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/4.png"
+                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
+                    </div>
+                </div>
+                <div class="physicalInfoContainer">
+                    <div class="physicalInfo"><b>HEIGHT:</b> ${pokemon.height}</div>
+                    <div class="physicalInfo"><b>WEIGHT:</b> ${pokemon.weight}</div>
+                </div>
+            </div>
+            <div class="deepDetailInfo">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Description
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>
+                                    While it is young, it uses the nutrients that are stored in the seed
+                                    on its back in order to grow. TODO:
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Stats Item
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="statsNamesContainer">
+                                    <p>HP:</p>
+                                    <p>ATTACK:</p>
+                                    <p>DEFENSE:</p>
+                                    <p>SPECIAL-ATTACK:</p>
+                                    <p>SPECIAL-DEFENSE:</p>
+                                    <p>SPEED:</p>
+                                </div>
+                                <div class="containerPorogress statsContainer">
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[0].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="hpStats" class="progress-bar" style="width: ${(pokemon.stats[0].base_stat * 100) / 255}%">${pokemon.stats[0].base_stat}</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[1].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="attackStats" class="progress-bar" style="width: ${(pokemon.stats[1].base_stat * 100) / 255}%">${pokemon.stats[1].base_stat}</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[2].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="defenseStats" class="progress-bar" style="width: ${(pokemon.stats[2].base_stat * 100) / 255}%">${pokemon.stats[2].base_stat}</div> 
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[3].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="sAttackStats" class="progress-bar" style="width: ${(pokemon.stats[3].base_stat * 100) / 255}%">${pokemon.stats[3].base_stat}</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[4].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="sDefenseStats" class="progress-bar" style="width: ${(pokemon.stats[4].base_stat * 100) / 255}%">${pokemon.stats[4].base_stat}</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Basic example"
+                                        aria-valuenow="${pokemon.stats[5].base_stat}" aria-valuemin="0" aria-valuemax="255">
+                                        <div id="speedStats" class="progress-bar" style="width: ${(pokemon.stats[5].base_stat * 100) / 255}%">${pokemon.stats[5].base_stat}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Evolve Chain
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="containerEvolveChain">
+                                    <img class="evolveChainImg"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                                        alt="">
+                                    <p class="evolveChainText">lv.16</br>>></p>
+                                    <img class="evolveChainImg"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+                                        alt="">
+                                    <p class="evolveChainText">lv.32</br>>></p>
+                                    <img class="evolveChainImg"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    `
+}

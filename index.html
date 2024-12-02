@@ -36,7 +36,7 @@
     <script src="./scripts/templateOverviewCard.js" defer></script>
     <script src="./script.js" defer></script>
     <script src="./scripts/search.js" defer></script>
-    <script src="./scripts/detailView.js"></script>
+    <script src="./scripts/detailView.js" defer></script>
     <script src="./scripts/basics.js" defer></script>
     <script src="./scripts/move.js" defer></script>
 
@@ -59,128 +59,7 @@
     <div class="detailView flexROW__xCyC d_none" id="detailView" onclick="toggleClass('d_none', 'detailView')">
         <div class="contentLimit detailView__Content" id="detailView__Content" onclick="stopPropagation(event)">
             <!-- ################################################################################################################# ICH BIN CONTENT IM OVERLAY -->
-            <button type="button" class="btn-close" aria-label="Close"
-                onclick="toggleClass('d_none', 'detailView')"></button>
-            <div class="detailView__Img" id="detailView__Img"><img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-                    alt="">
-            </div>
-            <div class="mainDetailInfo">
-                <p class="card__No" id="card__No1">No #1</p>
-                <p class="card__Name" id="card__Name">bulbasaur</p>
-                <div class="card__Types" id="card__Types">
-                    <div class="card__type">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/12.png"
-                            alt="" class="type__Img" id="type__Img1">
-                    </div>
-                    <div class="card__type">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/4.png"
-                            alt="" class="type__Img" id="type__Img1">
-                    </div>
-                </div>
-                <div class="physicalInfoContainer">
-                    <div class="physicalInfo"><b>HEIGHT:</b> 7</div>
-                    <div class="physicalInfo"><b>WEIGHT:</b> 69</div>
-                </div>
-            </div>
-            <div class="deepDetailInfo">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                aria-controls="flush-collapseOne">
-                                Description
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <p>
-                                    While it is young, it uses the nutrients that are stored in the seed
-                                    on its back in order to grow.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                aria-controls="flush-collapseTwo">
-                                Stats Item
-                            </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="statsNamesContainer">
-                                    <p>HP:</p>
-                                    <p>ATTACK:</p>
-                                    <p>DEFENSE:</p>
-                                    <p>SPECIAL-ATTACK:</p>
-                                    <p>SPECIAL-DEFENSE:</p>
-                                    <p>SPEED:</p>
-                                </div>
-                                <div class="containerPorogress statsContainer">
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 10%">10</div>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 25%">25</div>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 50%">50</div>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 75%">75</div>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 100%">100</div>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-label="Basic example"
-                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 100%">100</div>
-                                    </div>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                aria-controls="flush-collapseThree">
-                                Evolve Chain
-                            </button>
-                        </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="containerEvolveChain">
-                                    <img class="evolveChainImg"
-                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-                                        alt="">
-                                    <p class="evolveChainText">lv.16</br>>></p>
-                                    <img class="evolveChainImg"
-                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
-                                        alt="">
-                                    <p class="evolveChainText">lv.32</br>>></p>
-                                    <img class="evolveChainImg"
-                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
-                                        alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- ################################################################################################################# ICH BIN DAS ENDE VOM CONTENT -->
         </div>
