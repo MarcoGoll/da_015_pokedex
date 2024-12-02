@@ -33,19 +33,24 @@
     border-right: 15px solid black; */
 }
 
-.card__Img {
+.card__ImgContainer {
     width: 70%;
     height: 70%;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -70%);
+    top: -80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__Img {
     transition: var(--stdTransition);
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
 }
 
 .card__Img:hover {
-    /* width: 75%; */
-    /* TODO: work with transform : scale(1.1) to get a smooth transition - solve position Problems*/
+    transform: scale(1.2);
 }
 
 .card__Types {
