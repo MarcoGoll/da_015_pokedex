@@ -8,6 +8,8 @@ async function openDetailDialog(id) {
     console.log(pokemonSpecies.evolution_chain.url); // needs to be called for chaininfo
     console.log(pokemonSpecies.flavor_text_entries[0].flavor_text); // description => NEEDS TO BE CHECKES. SEEMS THAT IT IS NOT ALWAYS [0]
 
+    playCrie(id);
+
     //TODO: fetch URL_POKEMONSPECIES for more details
     //TODO: getHTMLForDetail(pokemon, species)
     //TODO: HTMLT with Bootstrap 
@@ -15,4 +17,9 @@ async function openDetailDialog(id) {
     // => https://getbootstrap.com/docs/5.3/components/close-button/
     // => https://getbootstrap.com/docs/5.3/components/progress/
     // => https://getbootstrap.com/docs/5.3/components/spinners/
+}
+
+function playCrie(id) {
+    let crie = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`);
+    crie.play();
 }
