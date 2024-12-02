@@ -108,3 +108,27 @@
     font-size: var(--fsDesktopTertiary);
     text-align: center;
 }
+
+#previousPokemonBtn {
+    left: -90px;
+}
+
+#nextPokemonBtn {
+    right: -90px;
+}
+
+.moveBtn {
+    position: absolute;
+    top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 100px;
+    padding: 80px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.moveBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

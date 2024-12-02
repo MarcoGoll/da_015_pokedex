@@ -252,7 +252,7 @@ function setBackGroundColorCard(id, arrayOfTypeIds) {
     }
 }
 
-function loadNextPokemon() {
+function loadNextPokemonsOverview() {
     renderCards_Amount(currentlyRendertCounter, LOADAMOUNT)
 }
 
@@ -289,7 +289,7 @@ document.addEventListener("scrollend", (event) => {
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100) {
         // you're at the bottom of the page
         if (searchMode == false) {
-            loadNextPokemon();
+            loadNextPokemonsOverview();
         }
     }
 })

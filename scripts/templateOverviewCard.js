@@ -44,8 +44,15 @@ function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
 
 function getHTMLForDetailView(pokemon, pokemonSpecies) {
     return `
-      <button type="button" class="btn-close" aria-label="Close"
+
+            <button type="button" class="btn-close" aria-label="Close"
                 onclick="toggleClass('d_none', 'detailView')"></button>
+            <button type="button" class="moveBtn" id="previousPokemonBtn" aria-label="previous"
+                onclick="loadNextPokemon(${(pokemon.id) - 1})"><img src="./assets/icons/googleFontsIcons/left.svg" alt="left">
+            </button>
+            <button type="button" class="moveBtn" id="nextPokemonBtn" aria-label="previous"
+                onclick="loadNextPokemon(${(pokemon.id) + 1})"><img src="./assets/icons/googleFontsIcons/right.svg" alt="right">
+            </button>
             <div class="detailView__Img" id="detailView__Img"><img
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
                     alt="">
