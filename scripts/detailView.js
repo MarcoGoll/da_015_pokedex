@@ -40,7 +40,7 @@ async function loadNextPokemon(id) {
     console.log(pokemonSpecies);
     console.log(pokemonSpecies.evolution_chain.url); // needs to be called for chaininfo
     console.log(pokemonSpecies.flavor_text_entries[0].flavor_text); // description => NEEDS TO BE CHECKES. SEEMS THAT IT IS NOT ALWAYS [0]
-
+    console.log(await getEvolutionChain(pokemonSpecies));
 }
 
 //gibt den ersten "en" Beschreibungstext aller flavor_text_entries zurück
@@ -61,5 +61,15 @@ function setBackGroundColorDetailView(arrayOfTypeIds) {
     } else {
         //OneBackground
         detailViewRef.style.background = `linear-gradient(120deg, ${TYPES[arrayOfTypeIds[0] - 1].lightColorCode} 0%, ${TYPES[arrayOfTypeIds[0] - 1].darkColorCode} 100%)`;
+    }
+}
+
+async function getEvolutionChain(pokemonSpecies) {
+    try {
+        let evolutionChain = await fetch(pokemonSpecies.evolution_chain.url);
+        let evolutionChainAsJson = await evolutionChain.json();
+        return evolutionChainAsJson;
+    } catch (error) {
+        console.error(ERROR_FETCHCATCH);
     }
 }
