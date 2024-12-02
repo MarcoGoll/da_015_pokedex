@@ -1,6 +1,7 @@
 
 async function openDetailDialog(id) {
     toggleClass('d_none', 'detailView');
+    toggleClass('overflowHidden', 'body');
     loadNextPokemon(id);
 
 }

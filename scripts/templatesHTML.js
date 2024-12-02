@@ -46,7 +46,7 @@ function getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText) {
     return `
 
             <button type="button" class="btn-close" aria-label="Close"
-                onclick="toggleClass('d_none', 'detailView')"></button>
+                onclick="toggleClass('d_none', 'detailView'), toggleClass('overflowHidden', 'body')"></button>
             <button type="button" class="moveBtn" id="previousPokemonBtn" aria-label="previous"
                 onclick="loadNextPokemon(${(pokemon.id) - 1})"><img src="./assets/icons/googleFontsIcons/left.svg" alt="left">
             </button>

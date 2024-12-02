@@ -37,6 +37,10 @@
     background-color: var(--clrBGDefaultInDarkMode);
 }
 
+.overflowHidden {
+    overflow: hidden;
+}
+
 /*BASIC FLEXBOX KLASSEN ==> x=xAchse / y=yAchse / C = Center */
 .flexROW_xC {
     display: flex;
