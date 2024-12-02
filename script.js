@@ -167,9 +167,9 @@ async function init() {
 }
 
 async function renderCards_Amount(start, amount) {
-    await setPokemonDetails(start, amount);
+    await setPokemonDetails(start, amount); //TODO: Give ID's (create function getIdsViaNames(allPokemon[start], amount))
     for (let i = start; i < (start + amount); i++) {
-        if (!(start + amount > allPokemons.length)) {
+        if (!(start + amount > allPokemons.length)) { //TODO: BUG: Dadurch werden die letzten x Pokemon nicht mehr angezeigt
             currentlyRendertCounter++;
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length > 1) {

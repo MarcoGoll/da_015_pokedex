@@ -28,12 +28,19 @@
     padding: 16px;
 }
 
+.btn-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+}
+
 .detailView__Content p {
     margin-bottom: 0;
 }
 
 .mainDetailInfo {
-    margin-top: 100px;
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -66,12 +73,24 @@
     height: 250px;
 }
 
+.accordion-body {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
 
-.containerPorogress {
+.statsNamesContainer {
+    font-size: 14px;
+    text-align: end;
+}
+
+.statsContainer {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    flex: 1;
+    justify-content: space-evenly;
 }
+
 
 .containerEvolveChain {
     display: flex;
