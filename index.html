@@ -31,12 +31,14 @@
 
     <link rel="stylesheet" href="./styles/overview_card.css">
     <link rel="stylesheet" href="./styles/detailView.css">
+    <link rel="stylesheet" href="./styles/move.css">
 
     <script src="./scripts/templateOverviewCard.js" defer></script>
     <script src="./script.js" defer></script>
     <script src="./scripts/search.js" defer></script>
     <script src="./scripts/detailView.js"></script>
     <script src="./scripts/basics.js" defer></script>
+    <script src="./scripts/move.js" defer></script>
 
 
 </head>
@@ -62,7 +64,7 @@
             <!-- ICH BIN CONTENT IM OVERLAY -->
             <button type="button" class="btn-close" aria-label="Close"
                 onclick="toggleClass('d_none', 'detailView')"></button>
-            <div class="detailView__Img"><img
+            <div class="detailView__Img" id="detailView__Img"><img
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
                     alt="">
             </div>

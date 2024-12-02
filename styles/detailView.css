@@ -50,14 +50,22 @@
 
 
 .detailView__Img {
-    width: 250px;
-    height: 250px;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -60%);
+    top: -120px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: var(--stdTransition);
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
+
+.detailView__Img img {
+    width: 250px;
+    height: 250px;
+}
+
 
 .containerPorogress {
     display: flex;

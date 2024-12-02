@@ -9,6 +9,7 @@ async function openDetailDialog(id) {
     console.log(pokemonSpecies.flavor_text_entries[0].flavor_text); // description => NEEDS TO BE CHECKES. SEEMS THAT IT IS NOT ALWAYS [0]
 
     playCrie(id);
+    runmove();
 
     //TODO: fetch URL_POKEMONSPECIES for more details
     //TODO: getHTMLForDetail(pokemon, species)
