@@ -5,14 +5,14 @@ function getHTMLForCardWithOneType(loadetPokemon, index, typeURL) {
                     <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <div class="card__ImgContainer">
                             <img src="${loadetPokemon.sprites.other['official-artwork'].front_default}"
-                            alt="" class="card__Img" id="card__Img${index}">
+                            alt="" class="card__Img" id="card__Img${loadetPokemon.id}">
                         </div> 
-                        <p class="card__No" id="card__No1">No #${loadetPokemon.id}</p>
-                        <p class="card__Name" id="card__Name${index}">${loadetPokemon.name}</p>
-                        <div class="card__Types" id="card__Types${index}">
+                        <p class="card__No" id="card__No${loadetPokemon.id}">No #${loadetPokemon.id}</p>
+                        <p class="card__Name" id="card__Name${loadetPokemon.id}">${loadetPokemon.name}</p>
+                        <div class="card__Types" id="card__Types${loadetPokemon.id}">
                             <div class="card__type">
                                 <img src="${typeURL}"
-                                    alt="" class="type__Img" id="type__Img${index}1">
+                                    alt="" class="type__Img" id="type__Img${loadetPokemon.id}1">
                             </div>
                         </div>
                     </div>
@@ -24,18 +24,18 @@ function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
                     <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <div class="card__ImgContainer">
                             <img src="${loadetPokemon.sprites.other['official-artwork'].front_default}"
-                            alt="" class="card__Img" id="card__Img${index}">
+                            alt="" class="card__Img" id="card__Img${loadetPokemon.id}">
                         </div> 
-                        <p class="card__No" id="card__No1">No #${loadetPokemon.id}</p>
-                        <p class="card__Name" id="card__Name${index}">${loadetPokemon.name}</p>
-                        <div class="card__Types" id="card__Types${index}">
+                        <p class="card__No" id="card__No${loadetPokemon.id}">No #${loadetPokemon.id}</p>
+                        <p class="card__Name" id="card__Name${loadetPokemon.id}">${loadetPokemon.name}</p>
+                        <div class="card__Types" id="card__Types${loadetPokemon.id}">
                             <div class="card__type">
                                 <img src="${type1URL}"
-                                    alt="" class="type__Img" id="type__Img${index}1">
+                                    alt="" class="type__Img" id="type__Img${loadetPokemon.id}1">
                             </div>
                             <div class="card__type">
                                 <img src="${type2URL}"
-                                    alt="" class="type__Img" id="type__Img${index}2">
+                                    alt="" class="type__Img" id="type__Img${loadetPokemon.id}2">
                             </div>
                         </div>
                     </div>

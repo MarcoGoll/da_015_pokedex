@@ -7,7 +7,7 @@ async function openDetailDialog(id) {
 
 function playCrie(id) {
     let crie = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`);
-    crie.volume = 0.05;
+    crie.volume = 0.005;
     crie.play();
 }
 
