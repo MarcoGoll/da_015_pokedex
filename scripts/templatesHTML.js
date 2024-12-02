@@ -61,14 +61,7 @@ function getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText) {
                 <p class="card__No" id="noDetailview">No #${pokemon.id}</p>
                 <p class="card__Name" id="nameDetailview">${pokemon.name}</p>
                 <div class="card__Types" id="typesDetailview">
-                    <div class="card__type">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/12.png"
-                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
-                    </div>
-                    <div class="card__type">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/4.png"
-                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
-                    </div>
+                
                 </div>
                 <div class="physicalInfoContainer">
                     <div class="physicalInfo"><b>HEIGHT:</b> ${pokemon.height}</div>
@@ -96,13 +89,13 @@ function getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText) {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="true"
                                 aria-controls="flush-collapseTwo">
                                 Stats Item
                             </button>
                         </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse show"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <div class="statsNamesContainer">
@@ -172,5 +165,28 @@ function getHTMLForDetailView(pokemon, pokemonSpecies, descriptionText) {
                     </div>
                 </div>
             </div>
+    `
+}
+
+
+function renderDetailViewOneType(pokemon, type1URL) {
+    return `
+                    <div class="card__type">
+                        <img src="${type1URL}"
+                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
+                    </div>
+    `
+}
+
+function renderDetailViewTwoTypes(pokemon, type1URL, type2URL) {
+    return `
+                    <div class="card__type">
+                        <img src="${type1URL}"
+                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
+                    </div>
+                    <div class="card__type">
+                        <img src="${type2URL}"
+                            alt="" class="type__Img" id="type__ImgDetailview${pokemon.id}1">
+                    </div>
     `
 }

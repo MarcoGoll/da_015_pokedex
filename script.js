@@ -27,8 +27,8 @@ const TYPES = [
     {
         "typeName": "flying",
         "id": 3,
-        "lightColorCode": `rgba(149,201,255${LIGHTOPACITY})`,
-        "darkColorCode": `rgba(149,201,255${DARKOPACITY})`
+        "lightColorCode": `rgba(149,201,255,${LIGHTOPACITY})`,
+        "darkColorCode": `rgba(149,201,255, ${DARKOPACITY})`
     },
     {
         "typeName": "poison",
