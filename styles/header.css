@@ -8,7 +8,7 @@ header {
     left: 0;
     right: 0;
     height: 10vh;
-    background-color: var(--clrPrim50);
+    background-color: var(--clrPrim75);
 }
 
 .content__Header {

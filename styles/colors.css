@@ -31,66 +31,24 @@
     --clrBGBtnHoverInDarkMode: lightgrey;
 
     /*Primary Color*/
-    --clrPrim95: #e6f7fe;
-    --clrPrim90: #cdeefe;
-    --clrPrim85: #b4e6fd;
-    --clrPrim80: #9cdefc;
-    --clrPrim75: #83d5fc;
-    --clrPrim70: #6acdfb;
-    --clrPrim65: #51c5fb;
-    --clrPrim60: #38bdfa;
-    --clrPrim55: #1fb4f9;
-    --clrPrim50: #06acf9;
-    --clrPrim45: #069be0;
-    --clrPrim40: #058ac7;
-    --clrPrim35: #0478ae;
-    --clrPrim30: #046795;
-    --clrPrim25: #03567c;
-    --clrPrim20: #034563;
-    --clrPrim15: #02334a;
-    --clrPrim10: #012232;
-    --clrPrim5: #011119;
+    --clrPrim95: #e6eeff;
+    --clrPrim90: #ccdeff;
+    --clrPrim85: #b3cdff;
+    --clrPrim80: #99bdff;
+    --clrPrim75: #80acff;
+    --clrPrim70: #669cff;
+    --clrPrim65: #4d8bff;
+    --clrPrim60: #337aff;
+    --clrPrim55: #1a6aff;
+    --clrPrim50: #0059ff;
+    --clrPrim45: #0050e6;
+    --clrPrim40: #0047cc;
+    --clrPrim35: #003eb3;
+    --clrPrim30: #003699;
+    --clrPrim25: #002d80;
+    --clrPrim20: #002466;
+    --clrPrim15: #001b4d;
+    --clrPrim10: #001233;
+    --clrPrim5: #00091a;
 
-    /*Secondary Color*/
-    --clrSec95: #e9f8fb;
-    --clrSec90: #d4f0f7;
-    --clrSec85: #bee9f4;
-    --clrSec80: #a8e1f0;
-    --clrSec75: #93daec;
-    --clrSec70: #7dd3e8;
-    --clrSec65: #67cbe4;
-    --clrSec60: #52c4e0;
-    --clrSec55: #3cbcdd;
-    --clrSec50: #26b5d9;
-    --clrSec45: #22a3c3;
-    --clrSec40: #1f91ad;
-    --clrSec35: #1b7f98;
-    --clrSec30: #176d82;
-    --clrSec25: #135b6c;
-    --clrSec20: #0f4857;
-    --clrSec15: #0b3641;
-    --clrSec10: #08242b;
-    --clrSec5: #041216;
-
-
-    /*Accent Color*/
-    --clrAcc95: #fff8e6;
-    --clrAcc90: #fff1cc;
-    --clrAcc85: #ffe9b3;
-    --clrAcc80: #ffe299;
-    --clrAcc75: #ffdb80;
-    --clrAcc70: #ffd466;
-    --clrAcc65: #ffcc4d;
-    --clrAcc60: #ffc533;
-    --clrAcc55: #ffbe1a;
-    --clrAcc50: #ffb700;
-    --clrAcc45: #e6a400;
-    --clrAcc40: #cc9200;
-    --clrAcc35: #b38000;
-    --clrAcc30: #996e00;
-    --clrAcc25: #805b00;
-    --clrAcc20: #664900;
-    --clrAcc15: #4d3700;
-    --clrAcc10: #332500;
-    --clrAcc5: #1a1200;
 }
