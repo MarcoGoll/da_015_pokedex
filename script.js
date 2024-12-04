@@ -167,6 +167,7 @@ async function init() {
 }
 
 async function renderCards_Amount(start, amount) {
+    toggleClass("d_none", "spinnerContainer");
     await setPokemonDetails(start, amount); //TODO: Give ID's (create function getIdsViaNames(allPokemon[start], amount))
     for (let i = start; i < (start + amount); i++) {
         if (!(start + amount > allPokemons.length)) { //TODO: BUG: Dadurch werden die letzten x Pokemon nicht mehr angezeigt
@@ -181,6 +182,7 @@ async function renderCards_Amount(start, amount) {
             }
         }
     }
+    toggleClass("d_none", "spinnerContainer");
 }
 
 async function setAllPokemons() {

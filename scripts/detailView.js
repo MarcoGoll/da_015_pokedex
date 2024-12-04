@@ -39,8 +39,11 @@ async function loadNextPokemon(id) {
     console.log(pokemon);
     console.log(pokemonSpecies);
     console.log(pokemonSpecies.evolution_chain.url); // needs to be called for chaininfo
-    console.log(pokemonSpecies.flavor_text_entries[0].flavor_text); // description => NEEDS TO BE CHECKES. SEEMS THAT IT IS NOT ALWAYS [0]
-    console.log(await getEvolutionChain(pokemonSpecies));
+
+    let evolutionChain = await getEvolutionChain(pokemonSpecies)
+    console.log(evolutionChain);
+    //TODO: let pokemonsInEvolutionChain = getNamesOfEvolutionChain(evolutionChain);
+    // console.log(pokemonsInEvolutionChain);
 }
 
 //gibt den ersten "en" Beschreibungstext aller flavor_text_entries zurück
@@ -72,4 +75,41 @@ async function getEvolutionChain(pokemonSpecies) {
     } catch (error) {
         console.error(ERROR_FETCHCATCH);
     }
+}
+
+//TODO: TBD 
+function getNamesOfEvolutionChain(evolutionChain) {
+    let pokemoninChain = [];
+
+    // first Pokemon (alwais the same)
+    pokemoninChain.push(evolutionChain.chain.species.name);
+
+    //Try 3 Evolve-Steps
+    // Sublevel 1
+    if (evolutionChain.chain.evolves_to.length > 0) {
+        // all second Pokemons (could be more than one)
+        for (let i = 0; i < evolutionChain.chain.evolves_to.length; i++) {
+            pokemoninChain.push(evolutionChain.chain.evolves_to[i].species.name);
+
+            // Sublevel 2
+            // all third Pokemen (could be more than one)
+            if (evolutionChain.chain.evolves_to[i].evolves_to.length > 0) {
+                for (let j = 0; j < evolutionChain.chain.evolves_to[i].evolves_to.length; j++) {
+                    pokemoninChain.push(evolutionChain.chain.evolves_to[i].evolves_to[j].species.name);
+                }
+            } else { return pokemoninChain; }
+        }
+    }
+    else {
+        return pokemoninChain;
+    }
+
+    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].species.name);
+
+
+    // third Pokemon (could be not there)
+    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name)
+    // fourth Pokemon (could be  i dont know an example)
+    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name)
+    return pokemoninChain;
 }
