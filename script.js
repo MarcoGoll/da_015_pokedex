@@ -197,10 +197,10 @@ async function renderCards_Amount(start, amount) {
             currentlyRendertCounter++;
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length > 1) {
-                cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
+                cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(loadetPokemons[i], URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
                 setBackGroundColorCard(loadetPokemons[i].id, arrayOfTypeIds);
             } else {
-                cardsContainerRef.innerHTML += getHTMLForCardWithOneType(loadetPokemons[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
+                cardsContainerRef.innerHTML += getHTMLForCardWithOneType(loadetPokemons[i], URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
                 setBackGroundColorCard(loadetPokemons[i].id, arrayOfTypeIds);
             }
         }
@@ -240,9 +240,9 @@ async function getPokemonByName(name) {
     }
 }
 
-async function getPokemonSpeciesById(id) {
+async function getPokemonSpeciesById(pokemon) {
     try {
-        let speciesPokemonX = await fetch(URL_POKEMONSPECIES + id);
+        let speciesPokemonX = await fetch(pokemon.species.url);
         return await speciesPokemonX.json();
     } catch (error) {
         console.error(ERROR_FETCHCATCH);
@@ -291,10 +291,10 @@ async function renderCards_Ids(pokemonIds) {
         searchedPokemon.push(await getPokemonById(pokemonIds[i]))
         let arrayOfTypeIds = getTypeIds(searchedPokemon[i]);
         if (arrayOfTypeIds.length > 1) {
-            cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
+            cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(searchedPokemon[i], URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");
             setBackGroundColorCard(searchedPokemon[i].id, arrayOfTypeIds);
         } else {
-            cardsContainerRef.innerHTML += getHTMLForCardWithOneType(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
+            cardsContainerRef.innerHTML += getHTMLForCardWithOneType(searchedPokemon[i], URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
             setBackGroundColorCard(searchedPokemon[i].id, arrayOfTypeIds);
         }
 

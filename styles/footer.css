@@ -2,6 +2,8 @@
     START ==> FOOTER
 ==================================================================================================== */
 footer {
+    position: relative;
+    top: 15vh;
     height: 10vh;
     /*1:1 header height*/
     background-color: var(--clrPrim50);

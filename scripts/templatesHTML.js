@@ -1,6 +1,6 @@
 //Bether Images but not for all pokemon available => loadetPokemon.sprites.other.dream_world.front_default
 
-function getHTMLForCardWithOneType(loadetPokemon, index, typeURL) {
+function getHTMLForCardWithOneType(loadetPokemon, typeURL) {
     return `
                     <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <div class="card__ImgContainer">
@@ -19,7 +19,7 @@ function getHTMLForCardWithOneType(loadetPokemon, index, typeURL) {
     `
 }
 
-function getHTMLForCardWithTwoTypes(loadetPokemon, index, type1URL, type2URL) {
+function getHTMLForCardWithTwoTypes(loadetPokemon, type1URL, type2URL) {
     return `
                     <div class="card" id="card${loadetPokemon.id}" onclick="openDetailDialog(${loadetPokemon.id})">
                         <div class="card__ImgContainer">

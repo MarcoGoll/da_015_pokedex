@@ -19,31 +19,37 @@ function renderDetailView(pokemon, pokemonSpecies, descriptionText) {
 }
 
 async function loadNextPokemon(id) {
-    let pokemon = await getPokemonById(id);
-    let pokemonSpecies = await getPokemonSpeciesById(id);
-    let descriptionText = getFlavorText(pokemonSpecies);
-    renderDetailView(pokemon, pokemonSpecies, descriptionText);
-    let arrayOfTypeIds = getTypeIds(pokemon);
-    let typesDetailviewRef = document.getElementById('typesDetailview');
-    typesDetailviewRef.innerHTML = '';
-    if (arrayOfTypeIds.length > 1) {
-        typesDetailviewRef.innerHTML = renderDetailViewTwoTypes(pokemon, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png")
-        setBackGroundColorDetailView(arrayOfTypeIds);
+    id = checkPokemonId(id);
+    if (!(id == 9999999999)) {
+
+        let pokemon = await getPokemonById(id);
+        let pokemonSpecies = await getPokemonSpeciesById(pokemon);
+        let descriptionText = getFlavorText(pokemonSpecies);
+        renderDetailView(pokemon, pokemonSpecies, descriptionText);
+        let arrayOfTypeIds = getTypeIds(pokemon);
+        let typesDetailviewRef = document.getElementById('typesDetailview');
+        typesDetailviewRef.innerHTML = '';
+        if (arrayOfTypeIds.length > 1) {
+            typesDetailviewRef.innerHTML = renderDetailViewTwoTypes(pokemon, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png")
+            setBackGroundColorDetailView(arrayOfTypeIds);
+        } else {
+            typesDetailviewRef.innerHTML = renderDetailViewOneType(pokemon, URL_TYPEIMG + arrayOfTypeIds[0] + ".png")
+            setBackGroundColorDetailView(arrayOfTypeIds);
+        }
+        playCrie(id);
+        runmove();
+
+        console.log(pokemon);
+        console.log(pokemonSpecies);
+        console.log(pokemonSpecies.evolution_chain.url); // needs to be called for chaininfo
+
+        let evolutionChain = await getEvolutionChain(pokemonSpecies)
+        console.log(evolutionChain);
+        //TODO: let pokemonsInEvolutionChain = getNamesOfEvolutionChain(evolutionChain);
+        // console.log(pokemonsInEvolutionChain);
     } else {
-        typesDetailviewRef.innerHTML = renderDetailViewOneType(pokemon, URL_TYPEIMG + arrayOfTypeIds[0] + ".png")
-        setBackGroundColorDetailView(arrayOfTypeIds);
+
     }
-    playCrie(id);
-    runmove();
-
-    console.log(pokemon);
-    console.log(pokemonSpecies);
-    console.log(pokemonSpecies.evolution_chain.url); // needs to be called for chaininfo
-
-    let evolutionChain = await getEvolutionChain(pokemonSpecies)
-    console.log(evolutionChain);
-    //TODO: let pokemonsInEvolutionChain = getNamesOfEvolutionChain(evolutionChain);
-    // console.log(pokemonsInEvolutionChain);
 }
 
 //gibt den ersten "en" Beschreibungstext aller flavor_text_entries zurück
@@ -112,4 +118,19 @@ function getNamesOfEvolutionChain(evolutionChain) {
     // fourth Pokemon (could be  i dont know an example)
     //pokemoninChain.push(evolutionChain.chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name)
     return pokemoninChain;
+}
+
+function checkPokemonId(id) {
+    switch (id) {
+        case 0:
+            return 9999999999;
+        case 1026:
+            return 10001;
+        case 10000:
+            return 1025;
+        case 10278:
+            return 9999999999;
+        default:
+            return id;
+    }
 }
