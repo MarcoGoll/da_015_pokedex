@@ -4,7 +4,7 @@
 const URL_TYPE19STELLAR = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/19.png";
 const URL_TYPE10001UNKNOWN = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/10001.png";
 const URL_ALLPOKEMON = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100000";
-const URL_POKEMONVIAID = "https://pokeapi.co/api/v2/pokemon/";
+const URL_POKEMON = "https://pokeapi.co/api/v2/pokemon/";
 const URL_POKEMONSPECIES = "https://pokeapi.co/api/v2/pokemon-species/";
 const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/";
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
@@ -198,7 +198,7 @@ async function setAllPokemons() {
 async function setPokemonDetails(start, amount) {
     for (let i = start; i < (start + amount); i++) {
         try {
-            let detailsPokemonX = await fetch(URL_POKEMONVIAID + (i + 1));
+            let detailsPokemonX = await fetch(URL_POKEMON + (i + 1));
             loadetPokemons.push(await detailsPokemonX.json());
         } catch (error) {
             console.error(ERROR_FETCHCATCH);
@@ -209,7 +209,16 @@ async function setPokemonDetails(start, amount) {
 async function getPokemonById(id) {
 
     try {
-        let detailsPokemonX = await fetch(URL_POKEMONVIAID + id);
+        let detailsPokemonX = await fetch(URL_POKEMON + id);
+        return await detailsPokemonX.json();
+    } catch (error) {
+        console.error(ERROR_FETCHCATCH);
+    }
+}
+
+async function getPokemonByName(name) {
+    try {
+        let detailsPokemonX = await fetch(URL_POKEMON + name);
         return await detailsPokemonX.json();
     } catch (error) {
         console.error(ERROR_FETCHCATCH);
@@ -263,7 +272,7 @@ async function renderCards_Ids(pokemonIds) {
     searchedPokemon = [];
     cardsContainerRef.innerHTML = "";
     for (let i = 0; i < pokemonIds.length; i++) {
-        searchedPokemon.push(await getPokemonById(pokemonIds[i] + 1))
+        searchedPokemon.push(await getPokemonById(pokemonIds[i]))
         let arrayOfTypeIds = getTypeIds(searchedPokemon[i]);
         if (arrayOfTypeIds.length > 1) {
             cardsContainerRef.innerHTML += getHTMLForCardWithTwoTypes(searchedPokemon[i], i, URL_TYPEIMG + arrayOfTypeIds[0] + ".png", URL_TYPEIMG + arrayOfTypeIds[1] + ".png");

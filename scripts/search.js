@@ -7,7 +7,7 @@ let searchBtnRef = document.getElementById('searchBtn');
 /*====================================================================================================
     FUNCTIONS
 ====================================================================================================*/
-function initSearchPokemon() {
+async function initSearchPokemon() {
     if (searchInputRef.value.length == "") {
         searchInputRef.classList.remove("inputInvalide");
         searchBtnRef.classList.remove("inputInvalideBtn");
@@ -21,8 +21,7 @@ function initSearchPokemon() {
         searchInputRef.classList.remove("inputInvalide");
         searchBtnRef.classList.add("inputValideBtn");
         searchBtnRef.classList.remove("inputInvalideBtn");
-        //TODO: next two lines in separate function onclick searchBTN
-        renderCards_Ids(searchPokemon(searchInputRef.value));
+        renderCards_Ids(await searchPokemon(searchInputRef.value));
         searchMode = true;
     } else {
         searchInputRef.classList.add("inputInvalide");
@@ -32,13 +31,12 @@ function initSearchPokemon() {
     }
 }
 
-function searchPokemon(searchString) {
+async function searchPokemon(searchString) {
     let searchedResult = [];
     for (let i = 0; i < allPokemons.length; i++) {
-        if (allPokemons[i].name.includes(searchString)) {
-            searchedResult.push(i);
-            //TODO: Geht nicht immer mit i, da manche Pokemon hier abweicheungen haben z.B. "https://pokeapi.co/api/v2/pokemon/10043/"
-            // Wir müssen anstatt dem index die ID ins array pushen
+        if (allPokemons[i].name.includes(searchString.toLowerCase())) {
+            let pokemon = await getPokemonByName(allPokemons[i].name);
+            searchedResult.push(pokemon.id);
         }
     }
     return searchedResult;
