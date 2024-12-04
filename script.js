@@ -10,7 +10,7 @@ const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sp
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
 const DARKOPACITY = "1";
-const LOADAMOUNT = 20;
+const LOADAMOUNT = 15;
 const TYPES = [
     {
         "typeName": "normal",
@@ -153,12 +153,16 @@ let searchMode = false;
     FUNCTIONS
 ====================================================================================================*/
 /**
-* Description for the function
+* Initialises the loading of all Pokemon into an array AND the rendering of a defined number of Pokemon
 * @param {string} <variableName> Desription for the usage of a parameter
 * @param {number} <variableName> Desription for the usage of a parameter
 * @param {(string|Array)} <variableName> Desription for the usage of a parameter
 * @param {(number|Array)} <variableName> Desription for the usage of a parameter
 * @returns {(string|Array)} <variableName> Desription for the return variable/value
+*/
+
+/**
+* Initialises the loading of all Pokemon into an array AND the rendering of a defined number of Pokemon
 */
 async function init() {
     await setAllPokemons();
@@ -166,11 +170,30 @@ async function init() {
     renderCards_Amount(currentlyRendertCounter, LOADAMOUNT);
 }
 
+
+/**
+* Loads all Pokemon and writes their name and URL to an array
+*/
+async function setAllPokemons() {
+    try {
+        let listOfAllPokemon = await fetch(URL_ALLPOKEMON);
+        let listOfAllPokemonAsJSON = await listOfAllPokemon.json();
+        allPokemons = listOfAllPokemonAsJSON.results;
+    } catch (error) {
+        console.error(ERROR_FETCHCATCH);
+    }
+}
+
+/**
+* Creates a certain number of Pokemon cards in the overview. 
+* @param {number} start - Index from which to start
+* @param {number} amount - Number to be rendered from the start (index)
+*/
 async function renderCards_Amount(start, amount) {
     toggleClass("d_none", "spinnerContainer");
-    await setPokemonDetails(start, amount); //TODO: Give ID's (create function getIdsViaNames(allPokemon[start], amount))
+    await addloadetPokemons(start, amount);
     for (let i = start; i < (start + amount); i++) {
-        if (!(start + amount > allPokemons.length)) { //TODO: BUG: Dadurch werden die letzten x Pokemon nicht mehr angezeigt
+        if (!(start + amount > allPokemons.length)) { //TODO: BUG: last x Pokemon will not be displayed, if start+amout is bigger than allPokemon.lenght
             currentlyRendertCounter++;
             let arrayOfTypeIds = getTypeIds(loadetPokemons[i]);
             if (arrayOfTypeIds.length > 1) {
@@ -185,20 +208,12 @@ async function renderCards_Amount(start, amount) {
     toggleClass("d_none", "spinnerContainer");
 }
 
-async function setAllPokemons() {
-    try {
-        let listOfAllPokemon = await fetch(URL_ALLPOKEMON);
-        let allPokemonsResponse = await listOfAllPokemon.json();
-        allPokemons = allPokemonsResponse.results;
-    } catch (error) {
-        console.error(ERROR_FETCHCATCH);
-    }
-}
 
-async function setPokemonDetails(start, amount) {
+async function addloadetPokemons(start, amount) {
     for (let i = start; i < (start + amount); i++) {
         try {
-            let detailsPokemonX = await fetch(URL_POKEMON + (i + 1));
+            let currentPokemon = await getPokemonByName(allPokemons[i].name);
+            let detailsPokemonX = await fetch(URL_POKEMON + currentPokemon.id);
             loadetPokemons.push(await detailsPokemonX.json());
         } catch (error) {
             console.error(ERROR_FETCHCATCH);
@@ -269,6 +284,7 @@ function loadNextPokemonsOverview() {
 
 // TODO: für Suche
 async function renderCards_Ids(pokemonIds) {
+    toggleClass("d_none", "spinnerContainer");
     searchedPokemon = [];
     cardsContainerRef.innerHTML = "";
     for (let i = 0; i < pokemonIds.length; i++) {
@@ -283,6 +299,7 @@ async function renderCards_Ids(pokemonIds) {
         }
 
     }
+    toggleClass("d_none", "spinnerContainer");
 }
 
 function reset() {
