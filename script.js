@@ -147,20 +147,9 @@ let currentlyRendertCounter = 0;
 let cardsContainerRef = document.getElementById('cardsContainer');
 let searchMode = false;
 
-
-
 /*====================================================================================================
     FUNCTIONS
 ====================================================================================================*/
-/**
-* Initialises the loading of all Pokemon into an array AND the rendering of a defined number of Pokemon
-* @param {string} <variableName> Desription for the usage of a parameter
-* @param {number} <variableName> Desription for the usage of a parameter
-* @param {(string|Array)} <variableName> Desription for the usage of a parameter
-* @param {(number|Array)} <variableName> Desription for the usage of a parameter
-* @returns {(string|Array)} <variableName> Desription for the return variable/value
-*/
-
 /**
 * Initialises the loading of all Pokemon into an array AND the rendering of a defined number of Pokemon
 */
@@ -169,7 +158,6 @@ async function init() {
     cardsContainerRef.innerHTML = "";
     renderCards_Amount(currentlyRendertCounter, LOADAMOUNT);
 }
-
 
 /**
 * Loads all Pokemon and writes their name and URL to an array
@@ -208,7 +196,11 @@ async function renderCards_Amount(start, amount) {
     toggleClass("d_none", "spinnerContainer");
 }
 
-
+/**
+* Loads a certain number of Pokemon details and writes them into an array 
+* @param {number} start - Index from which to start
+* @param {number} amount - Number to be rendered from the start (index)
+*/
 async function addloadetPokemons(start, amount) {
     for (let i = start; i < (start + amount); i++) {
         try {
@@ -221,6 +213,11 @@ async function addloadetPokemons(start, amount) {
     }
 }
 
+/**
+* Returns detailed information about a Pokemon based on an ID
+* @param {number} id - Identifier of the Pokemon
+* @returns {object} - A Pokemon object
+*/
 async function getPokemonById(id) {
 
     try {
@@ -231,6 +228,11 @@ async function getPokemonById(id) {
     }
 }
 
+/**
+* Returns detailed information about a Pokemon based on a Name
+* @param {number} name - Name of the Pokemon
+* @returns {object} - A Pokemon object
+*/
 async function getPokemonByName(name) {
     try {
         let detailsPokemonX = await fetch(URL_POKEMON + name);
@@ -240,7 +242,12 @@ async function getPokemonByName(name) {
     }
 }
 
-async function getPokemonSpeciesById(pokemon) {
+/**
+* Returns species information about a Pokemon based on a Pokemon object
+* @param {object} pokemon - Pokemon object
+* @returns {object} - A Pokemon Object
+*/
+async function getPokemonSpecies(pokemon) {
     try {
         let speciesPokemonX = await fetch(pokemon.species.url);
         return await speciesPokemonX.json();
@@ -249,6 +256,11 @@ async function getPokemonSpeciesById(pokemon) {
     }
 }
 
+/**
+* Returns an Array of type Id's matching the pokemon (based on a Pokemon object)
+* @param {object} pokemon - Pokemon object
+* @returns {(string|Array)} - All type ID's matching the pokemon
+*/
 function getTypeIds(pokemon) {
     let foundTypes = [];
     pokemon.types.forEach((type, i) => {
@@ -266,6 +278,11 @@ function getTypeIds(pokemon) {
     return foundIds;
 }
 
+/**
+* Sets the Backgroundcolor of a card within the overview
+* @param {number} id - ID of the Pokemon
+* @param {(string|Array)} arrayOfTypeIds - All type ID's matching the pokemon
+*/
 function setBackGroundColorCard(id, arrayOfTypeIds) {
     let cardRef = document.getElementById("card" + id);
     if (arrayOfTypeIds.length > 1) {
@@ -278,11 +295,17 @@ function setBackGroundColorCard(id, arrayOfTypeIds) {
     }
 }
 
+/**
+* Starts next render process as soon as more Pokemon are to be loaded
+*/
 function loadNextPokemonsOverview() {
     renderCards_Amount(currentlyRendertCounter, LOADAMOUNT)
 }
 
-// TODO: für Suche
+/**
+* Creates Pokemon cards in the overview, which are created for a list of IDs (e.g. search results)
+* @param {(number|Array)} pokemonIds - Array of ID's wich should be displayed in the Overview
+*/
 async function renderCards_Ids(pokemonIds) {
     toggleClass("d_none", "spinnerContainer");
     searchedPokemon = [];
@@ -297,11 +320,13 @@ async function renderCards_Ids(pokemonIds) {
             cardsContainerRef.innerHTML += getHTMLForCardWithOneType(searchedPokemon[i], URL_TYPEIMG + arrayOfTypeIds[0] + ".png");
             setBackGroundColorCard(searchedPokemon[i].id, arrayOfTypeIds);
         }
-
     }
     toggleClass("d_none", "spinnerContainer");
 }
 
+/**
+* Reset the WebApp 
+*/
 function reset() {
     currentlyRendertCounter = 0;
     loadetPokemons = [];
@@ -312,7 +337,9 @@ function reset() {
 /*====================================================================================================
     EVENT LISTENERS
 ====================================================================================================*/
-// Add eventlistenders here
+/**
+* Event listener that checks during scrolling whether the end of the page has been reached and, if so, initialises the loading of further Pokemon cards 
+*/
 document.addEventListener("scrollend", (event) => {
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100) {
         // you're at the bottom of the page
