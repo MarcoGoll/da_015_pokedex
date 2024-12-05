@@ -1,37 +1,35 @@
-/**
-* Initialises the loading of all Pokemon into an array AND the rendering of a defined number of Pokemon
-* @param {string} <variableName> Desription for the usage of a parameter
-* @param {number} <variableName> Desription for the usage of a parameter
-* @param {(string|Array)} <variableName> Desription for the usage of a parameter
-* @param {(number|Array)} <variableName> Desription for the usage of a parameter
-* @returns {(string|Array)} <variableName> Desription for the return variable/value
-*/
-
+/*====================================================================================================
+    GLOBAL VARIABLES
+====================================================================================================*/
 let className = "move";
 
-
+/*====================================================================================================
+    FUNCTIONS
+====================================================================================================*/
 /**
 * Inititalises the start of the move effect AND set an timeout (how long the animation should run) 
 */
 function runmove() {
-    let moveBtnRef = document.getElementById('detailView__Img');
-    startmove(moveBtnRef);
+    let movingElementRef = document.getElementById('detailView__Img');
+    startmove(movingElementRef);
     setTimeout(() => {
-        endmove(moveBtnRef);
+        endmove(movingElementRef);
     }, 300);
 }
 
 /**
 * Starts of the move effect
+* @param {HTMLElement} - Element which should be moving
 */
-function startmove(moveBtnRef) {
-    moveBtnRef.classList.add(className);
+function startmove(movingElementRef) {
+    movingElementRef.classList.add(className);
 }
 
 /**
 * Ends of the move effect
+* @param {HTMLElement} - Element which should be moving
 */
-function endmove(moveBtnRef) {
-    moveBtnRef.classList.remove(className);
+function endmove(movingElementRef) {
+    movingElementRef.classList.remove(className);
 }
 

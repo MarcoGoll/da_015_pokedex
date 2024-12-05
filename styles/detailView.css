@@ -15,7 +15,6 @@
     left: auto;
     right: auto;
     width: 500px;
-    min-height: 500px;
     background-color: white;
     z-index: 99;
     border-radius: var(--stdRadius);

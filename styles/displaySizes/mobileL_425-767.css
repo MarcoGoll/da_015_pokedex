@@ -3,8 +3,83 @@
 ==================================================================================================== */
 @media (min-width: 425px) and (max-width: 767px) {
 
-    /* Add here Mobile L specific adjustments */
+    #logoTextHeader {
+        display: none;
+    }
 
-    /* TODO: Ab hier inputSearch anders gestalten */
+    .detailView__Content {
+        width: 400px;
+        background-color: white;
+    }
+
+    #previousPokemonBtn {
+        left: 0px;
+    }
+
+    #nextPokemonBtn {
+        right: 0px;
+    }
+
+    .moveBtn {
+        position: absolute;
+        top: 102%;
+        padding: 10px 80px;
+    }
+
+    .detailView__Img {
+        top: -60px;
+        border-bottom: none;
+    }
+
+    .detailView__Img img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .type__Img {
+        width: 100px;
+    }
+
+    body {
+        font-size: var(--fsMobileDefault);
+    }
+
+    h1 {
+        font-size: var(--fsMobileH1)
+    }
+
+    h2 {
+        font-size: var(--fsMobileH2);
+    }
+
+    h3 {
+        font-size: var(--fsMobileH3);
+    }
+
+    h4 {
+        font-size: var(--fsMobileH4);
+    }
+
+    input {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .detailView__Content {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .statsNamesContainer {
+        font-size: 12px;
+    }
+
+    .evolveChainText {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .card__No {
+        font-size: var(--fsMobileTertiary);
+    }
+
+
 
 }

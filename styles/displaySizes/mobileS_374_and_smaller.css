@@ -3,6 +3,99 @@
 ==================================================================================================== */
 @media (max-width: 374px) {
 
-    /* Add here Mobile S specific adjustments  ==> try to adjust at least until 320px */
+
+    #logoTextHeader {
+        display: none;
+    }
+
+    .card {
+        width: 250px;
+        height: 250px;
+    }
+
+    .detailView__Content {
+        top: 10%;
+        width: 300px;
+        background-color: white;
+    }
+
+    #previousPokemonBtn {
+        left: 0px;
+    }
+
+    #nextPokemonBtn {
+        right: 0px;
+    }
+
+    .moveBtn {
+        position: absolute;
+        top: 102%;
+        padding: 10px 60px;
+    }
+
+    .mainDetailInfo {
+        margin-top: 70px;
+    }
+
+    .detailView__Img {
+        top: -60px;
+        border-bottom: none;
+    }
+
+    .detailView__Img img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card__Types {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .type__Img {
+        width: 110px;
+    }
+
+    body {
+        font-size: var(--fsMobileDefault);
+    }
+
+    h1 {
+        font-size: var(--fsMobileH1)
+    }
+
+    h2 {
+        font-size: var(--fsMobileH2);
+    }
+
+    h3 {
+        font-size: var(--fsMobileH3);
+    }
+
+    h4 {
+        font-size: var(--fsMobileH4);
+    }
+
+    input {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .detailView__Content {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .statsNamesContainer {
+        font-size: 12px;
+    }
+
+    .evolveChainText {
+        font-size: var(--fsMobileTertiary);
+    }
+
+    .card__No {
+        font-size: var(--fsMobileTertiary);
+    }
+
+
 
 }

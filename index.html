@@ -23,14 +23,15 @@
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/footer.css">
 
-    <link rel="stylesheet" href="./styles/displaySizes/tablet_768-1023.css">
-    <link rel="stylesheet" href="./styles/displaySizes/mobileL_425-767.css">
-    <link rel="stylesheet" href="./styles/displaySizes/mobileM_375-424.css">
-    <link rel="stylesheet" href="./styles/displaySizes/mobileS_374_and_smaller.css">
 
     <link rel="stylesheet" href="./styles/overview_card.css">
     <link rel="stylesheet" href="./styles/detailView.css">
     <link rel="stylesheet" href="./styles/move.css">
+
+    <link rel="stylesheet" href="./styles/displaySizes/tablet_768-1023.css">
+    <link rel="stylesheet" href="./styles/displaySizes/mobileL_425-767.css">
+    <link rel="stylesheet" href="./styles/displaySizes/mobileM_375-424.css">
+    <link rel="stylesheet" href="./styles/displaySizes/mobileS_374_and_smaller.css">
 
     <script src="./scripts/templatesHTML.js" defer></script>
     <script src="./script.js" defer></script>
@@ -57,7 +58,7 @@
     </header>
     <div class="detailView flexROW__xCyC d_none" id="detailView"
         onclick="toggleClass('d_none', 'detailView'), toggleClass('overflowHidden', 'body')">
-        <div class="contentLimit detailView__Content" id="detailView__Content" onclick="stopPropagation(event)">
+        <div class="detailView__Content" id="detailView__Content" onclick="stopPropagation(event)">
         </div>
     </div>
     <main>
