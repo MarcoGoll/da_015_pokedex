@@ -17,6 +17,7 @@ async function initSearchPokemon() {
         renderCards_Amount(currentlyRendertCounter, LOADAMOUNT);
     }
     else if (searchInputRef.value.length >= 3) {
+        searchMode = true;
         setCSSClassesForValideSearchString();
         let searchResults = await searchPokemon(searchInputRef.value);
         if (searchResults.length == 0) {
