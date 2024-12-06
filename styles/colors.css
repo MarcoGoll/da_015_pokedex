@@ -10,10 +10,10 @@
     --clrBGDefaultInLightMode: rgb(240, 240, 240);
     /*Text interactive Elements in LightMode*/
     --clrTextLinkInLightMode: black;
-    --clrTextBtnInLightMode: black;
+    --clrTextBtnInLightMode: var(--clrPrim10);
     /*Background interactive Elements in LightMode*/
     --clrBGLinkInLightMode: rgb(55, 0, 255);
-    --clrBGBtnInLightMode: rgb(55, 0, 255);
+    --clrBGBtnInLightMode: var(--clrPrim70);
     --clrBGLinkHoverInLightMode: rgb(105, 63, 255);
     --clrBGBtnHoverInLightMode: rgb(105, 63, 255);
 

@@ -56,6 +56,33 @@ h1 {
     text-align: center;
 }
 
+.loadNextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loadNextBtn {
+    background-color: #ff6b57;
+    color: white;
+    border: 1px solid #f5634f;
+    transition: var(--stdTransition);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loadNextBtn:hover {
+    transform: scale(1.1);
+    background-color: #ff7867;
+}
+
+#txtAmount {
+    margin-top: 60px;
+    text-align: center;
+    font-size: var(--fsDesktopTertiary);
+}
+
 /*==================================================================================================== 
     END ==> MAIN
 ==================================================================================================== */

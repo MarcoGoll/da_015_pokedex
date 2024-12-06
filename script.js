@@ -8,7 +8,7 @@ const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sp
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
 const DARKOPACITY = "1";
-const LOADAMOUNT = 15;
+const LOADAMOUNT = 20;
 const TYPES = [
     {
         "typeName": "normal",
@@ -191,6 +191,7 @@ async function renderCards_Amount(start, amount) {
             }
         }
     }
+    setPokemonCount();
     toggleClass("d_none", "spinnerContainer");
 }
 
@@ -332,19 +333,32 @@ function reset() {
     searchMode = false;
 }
 
+//initialise loadNextPokemon
+function initLoadNextPokemonsOverview() {
+    if (searchMode == false) {
+        loadNextPokemonsOverview();
+    }
+}
+
+function setPokemonCount() {
+    let txtAmountRef = document.getElementById('txtAmount');
+    txtAmountRef.innerHTML = `${loadetPokemons.length} von ${allPokemons.length}`
+}
+
 /*====================================================================================================
     EVENT LISTENERS
 ====================================================================================================*/
 /**
-* Event listener that checks during scrolling whether the end of the page has been reached and, if so, initialises the loading of further Pokemon cards 
+* Event listener that checks during scrolling whether the end of the page has been reached and, if so, initialises the loading of further Pokemon cards
 */
-document.addEventListener("scrollend", (event) => {
-    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100) {
-        // you're at the bottom of the page
-        if (searchMode == false) {
-            loadNextPokemonsOverview();
-        }
-    }
-})
+//TODO: BUG ==> did not work on mobile phones(thas why i created a button instead - but i keep the code to try it later on)
+// document.addEventListener("scrollend", (event) => {
+//     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+//         // you're at the bottom of the page
+//         if (searchMode == false) {
+//             loadNextPokemonsOverview();
+//         }
+//     }
+// })
 
 
