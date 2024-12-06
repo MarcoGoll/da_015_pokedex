@@ -9,8 +9,9 @@ footer {
 }
 
 
-.content__Footer {
-    /* add specific design for header content here */
+.content__Footer p {
+    text-align: center;
+    font-size: var(--fsDesktopTertiary) !important;
 }
 
 /*==================================================================================================== 

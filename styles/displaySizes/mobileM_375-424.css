@@ -90,5 +90,9 @@
         font-size: var(--fsMobileTertiary);
     }
 
+    .content__Footer p {
+        font-size: var(--fsMobileTertiary) !important;
+    }
+
 
 }
