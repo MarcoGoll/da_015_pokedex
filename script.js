@@ -1,12 +1,8 @@
 /*====================================================================================================
     GLOBAL VARIABLES
 ====================================================================================================*/
-const URL_TYPE19STELLAR = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/19.png";
-const URL_TYPE10001UNKNOWN = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/10001.png";
 const URL_ALLPOKEMON = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100000";
 const URL_POKEMON = "https://pokeapi.co/api/v2/pokemon/";
-const URL_POKEMONSPECIES = "https://pokeapi.co/api/v2/pokemon-species/";
-const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/";
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
 const DARKOPACITY = "1";
