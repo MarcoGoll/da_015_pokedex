@@ -193,6 +193,7 @@ async function renderCards_Amount(start, amount) {
     }
     setPokemonCount();
     toggleClass("d_none", "spinnerContainer");
+    document.getElementById('loadNextContainer').classList.remove("d_none");
 }
 
 /**
@@ -321,6 +322,7 @@ async function renderCards_Ids(pokemonIds) {
         }
     }
     toggleClass("d_none", "spinnerContainer");
+    document.getElementById('loadNextContainer').classList.add("d_none");
 }
 
 /**
