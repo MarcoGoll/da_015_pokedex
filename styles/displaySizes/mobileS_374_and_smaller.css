@@ -96,6 +96,9 @@
         font-size: var(--fsMobileTertiary);
     }
 
+    #txtAmount {
+        font-size: var(--fsMobileTertiary);
+    }
 
 
 }
