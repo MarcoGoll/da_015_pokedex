@@ -8,7 +8,7 @@ const URL_TYPEIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sp
 const ERROR_FETCHCATCH = "Schnittstellen-Aufruf ist fehlgeschlagen. Bitte versuchen Sie es Später wieder.";
 const LIGHTOPACITY = "0.6";
 const DARKOPACITY = "1";
-const LOADAMOUNT = 20;
+const LOADAMOUNT = 15;
 const TYPES = [
     {
         "typeName": "normal",
@@ -322,7 +322,6 @@ async function renderCards_Ids(pokemonIds) {
         }
     }
     toggleClass("d_none", "spinnerContainer");
-    document.getElementById('loadNextContainer').classList.add("d_none");
 }
 
 /**
@@ -335,13 +334,18 @@ function reset() {
     searchMode = false;
 }
 
-//initialise loadNextPokemon
+/**
+* initialise loadNextPokemon
+*/
 function initLoadNextPokemonsOverview() {
     if (searchMode == false) {
         loadNextPokemonsOverview();
     }
 }
 
+/**
+* set the current Pokemon Amount
+*/
 function setPokemonCount() {
     let txtAmountRef = document.getElementById('txtAmount');
     txtAmountRef.innerHTML = `${loadetPokemons.length} von ${allPokemons.length}`
