@@ -36,20 +36,15 @@ function renderDetailView(pokemon, pokemonSpecies, descriptionText) {
 */
 async function loadNextPokemon(id) {
     id = checkPokemonId(id);
-    if (!(id == 9999999999)) {
-        let pokemon = await getPokemonById(id);
-        let pokemonSpecies = await getPokemonSpecies(pokemon);
-        let descriptionText = getFlavorText(pokemonSpecies);
-        renderDetailView(pokemon, pokemonSpecies, descriptionText);
-        initBackgroundcolorSetting(pokemon);
+    let pokemon = await getPokemonById(id);
+    let pokemonSpecies = await getPokemonSpecies(pokemon);
+    let descriptionText = getFlavorText(pokemonSpecies);
+    renderDetailView(pokemon, pokemonSpecies, descriptionText);
+    initBackgroundcolorSetting(pokemon);
+    if (!muteMode) {
         playCrie(id);
-        runmove();
-        //TODO: POKEMON CHAIN (Ideas in the Next Line's)
-        // let evolutionChain = await getEvolutionChain(pokemonSpecies)
-        // console.log(evolutionChain);
-        // let pokemonsInEvolutionChain = getNamesOfEvolutionChain(evolutionChain);
-        // console.log(pokemonsInEvolutionChain);
     }
+    runmove();
 }
 
 /**
@@ -104,64 +99,25 @@ function setBackGroundColorDetailView(arrayOfTypeIds) {
 function checkPokemonId(id) {
     switch (id) {
         case 0:
-            return 9999999999;
+            return 10277;
         case 1026:
             return 10001;
         case 10000:
             return 1025;
         case 10278:
-            return 9999999999;
+            return 1;
         default:
             return id;
     }
 }
 
-//TODO: POKEMON CHAIN (only Ideas so far)
-/*
-async function getEvolutionChain(pokemonSpecies) {
-    try {
-        let evolutionChain = await fetch(pokemonSpecies.evolution_chain.url);
-        let evolutionChainAsJson = await evolutionChain.json();
-        return evolutionChainAsJson;
-    } catch (error) {
-        console.error(ERROR_FETCHCATCH);
+function changeMuteMode() {
+    let muteBtnRef = document.getElementById('muteBtn');
+    if (muteMode == true) {
+        muteMode = false;
+        muteBtnRef.innerHTML = '<img src="./assets/icons/googleFontsIcons/volume_on.svg">';
+    } else {
+        muteMode = true;
+        muteBtnRef.innerHTML = '<img src="./assets/icons/googleFontsIcons/volume_off.svg">';
     }
 }
-
-//TODO: TBD 
-function getNamesOfEvolutionChain(evolutionChain) {
-    let pokemoninChain = [];
-
-    // first Pokemon (alwais the same)
-    pokemoninChain.push(evolutionChain.chain.species.name);
-
-    //Try 3 Evolve-Steps
-    // Sublevel 1
-    if (evolutionChain.chain.evolves_to.length > 0) {
-        // all second Pokemons (could be more than one)
-        for (let i = 0; i < evolutionChain.chain.evolves_to.length; i++) {
-            pokemoninChain.push(evolutionChain.chain.evolves_to[i].species.name);
-
-            // Sublevel 2
-            // all third Pokemen (could be more than one)
-            if (evolutionChain.chain.evolves_to[i].evolves_to.length > 0) {
-                for (let j = 0; j < evolutionChain.chain.evolves_to[i].evolves_to.length; j++) {
-                    pokemoninChain.push(evolutionChain.chain.evolves_to[i].evolves_to[j].species.name);
-                }
-            } else { return pokemoninChain; }
-        }
-    }
-    else {
-        return pokemoninChain;
-    }
-
-    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].species.name);
-
-
-    // third Pokemon (could be not there)
-    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name)
-    // fourth Pokemon (could be  i dont know an example)
-    //pokemoninChain.push(evolutionChain.chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name)
-    return pokemoninChain;
-}
-*/

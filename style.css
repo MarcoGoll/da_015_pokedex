@@ -14,7 +14,7 @@
     --stdTransition: all 200ms ease-in-out;
 
     /*Basics for InteractiveElements (Link / Button / Input) */
-    --stdPaddingInteractiveElements: 0.5rem 2rem;
+    --stdPaddingInteractiveElements: 0.5rem 1rem;
     --stdRadiusInteractiveElements: 0.8rem;
 }
 
@@ -28,7 +28,7 @@
 ==================================================================================================== */
 .contentLimit {
     width: 100%;
-    min-width: 320px;
+    min-width: 300px;
     max-width: 1440px;
 }
 

@@ -8,9 +8,13 @@
         display: none;
     }
 
+    #searchBtn {
+        display: none;
+    }
+
     .card {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 260px;
     }
 
     .detailView__Content {

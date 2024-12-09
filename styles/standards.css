@@ -6,8 +6,10 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    /* outline: 2px solid lime; <== to identify all sizes*/
-    /* background: hsl(0 100% 50% / 0.1 <== to identify Layering*/
+    /*outline: 2px solid lime;
+    <== to identify all sizes*/
+    /*background: hsl(0 100% 50% / 0.1)
+        <== to identify Layering */
 }
 
 /* Remove default margin & padding*/

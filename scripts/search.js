@@ -14,7 +14,7 @@ async function initSearchPokemon() {
     if (searchInputRef.value.length == "") {
         setCSSClassesForEmptySearchString();
         reset();
-        renderCards_Amount(currentlyRendertCounter, LOADAMOUNT);
+        renderCardsAmount(currentlyRendertCounter, LOADAMOUNT);
     }
     else if (searchInputRef.value.length >= 3) {
         searchMode = true;
@@ -24,7 +24,7 @@ async function initSearchPokemon() {
         if (searchResults.length == 0) {
             cardsContainerRef.innerHTML = '<p class="txtNoResult">Zu Ihrem Suchbegriff, konnten keine Pokemon gefunden werden.</p>';
         } else {
-            renderCards_Ids(await searchPokemon(searchInputRef.value));
+            renderCardsIds(await searchPokemon(searchInputRef.value));
         }
     } else {
         setCSSClassesForInvalideSearchString();

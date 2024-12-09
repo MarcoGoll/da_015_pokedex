@@ -83,6 +83,20 @@ h1 {
     font-size: var(--fsDesktopTertiary);
 }
 
+#muteBtn {
+    position: sticky;
+    top: 16px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    transition: var(--stdTransition);
+    padding: 8px;
+}
+
+#muteBtn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 /*==================================================================================================== 
     END ==> MAIN
 ==================================================================================================== */

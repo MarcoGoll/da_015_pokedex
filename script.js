@@ -143,7 +143,9 @@ let loadetPokemons = []; // detailinfos
 let searchedPokemon = [];
 let currentlyRendertCounter = 0;
 let cardsContainerRef = document.getElementById('cardsContainer');
+let loadMoreBtnRef = document.getElementById('loadNextBtn');
 let searchMode = false;
+let muteMode = true;
 
 /*====================================================================================================
     FUNCTIONS
@@ -154,7 +156,7 @@ let searchMode = false;
 async function init() {
     await setAllPokemons();
     cardsContainerRef.innerHTML = "";
-    renderCards_Amount(currentlyRendertCounter, LOADAMOUNT);
+    renderCardsAmount(currentlyRendertCounter, LOADAMOUNT);
 }
 
 /**
@@ -175,7 +177,7 @@ async function setAllPokemons() {
 * @param {number} start - Index from which to start
 * @param {number} amount - Number to be rendered from the start (index)
 */
-async function renderCards_Amount(start, amount) {
+async function renderCardsAmount(start, amount) {
     toggleClass("d_none", "spinnerContainer");
     await addloadetPokemons(start, amount);
     for (let i = start; i < (start + amount); i++) {
@@ -192,6 +194,7 @@ async function renderCards_Amount(start, amount) {
         }
     }
     setPokemonCount();
+    loadMoreBtnRef.disabled = false;
     toggleClass("d_none", "spinnerContainer");
     document.getElementById('loadNextContainer').classList.remove("d_none");
 }
@@ -299,14 +302,14 @@ function setBackGroundColorCard(id, arrayOfTypeIds) {
 * Starts next render process as soon as more Pokemon are to be loaded
 */
 function loadNextPokemonsOverview() {
-    renderCards_Amount(currentlyRendertCounter, LOADAMOUNT)
+    renderCardsAmount(currentlyRendertCounter, LOADAMOUNT)
 }
 
 /**
 * Creates Pokemon cards in the overview, which are created for a list of IDs (e.g. search results)
 * @param {(number|Array)} pokemonIds - Array of ID's wich should be displayed in the Overview
 */
-async function renderCards_Ids(pokemonIds) {
+async function renderCardsIds(pokemonIds) {
     toggleClass("d_none", "spinnerContainer");
     searchedPokemon = [];
     cardsContainerRef.innerHTML = "";
@@ -332,6 +335,8 @@ function reset() {
     loadetPokemons = [];
     cardsContainerRef.innerHTML = "";
     searchMode = false;
+    loadMoreBtnRef.disabled = false;
+    muteMode = true;
 }
 
 /**
@@ -339,6 +344,7 @@ function reset() {
 */
 function initLoadNextPokemonsOverview() {
     if (searchMode == false) {
+        loadMoreBtnRef.disabled = true;
         loadNextPokemonsOverview();
     }
 }
@@ -350,21 +356,3 @@ function setPokemonCount() {
     let txtAmountRef = document.getElementById('txtAmount');
     txtAmountRef.innerHTML = `${loadetPokemons.length} von ${allPokemons.length}`
 }
-
-/*====================================================================================================
-    EVENT LISTENERS
-====================================================================================================*/
-/**
-* Event listener that checks during scrolling whether the end of the page has been reached and, if so, initialises the loading of further Pokemon cards
-*/
-//TODO: BUG ==> did not work on mobile phones(thas why i created a button instead - but i keep the code to try it later on)
-// document.addEventListener("scrollend", (event) => {
-//     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-//         // you're at the bottom of the page
-//         if (searchMode == false) {
-//             loadNextPokemonsOverview();
-//         }
-//     }
-// })
-
-

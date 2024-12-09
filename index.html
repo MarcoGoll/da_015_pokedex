@@ -49,8 +49,7 @@
             <img id="logoImgHeader" src="./assets/img/logo.png" alt="logo">
             <span id="logoTextHeader"> Pokédex</span>
             <div class="searchArea">
-                <input id="searchInput" type="text" placeholder="Search for a Pokemon ..."
-                    onkeyup="initSearchPokemon()">
+                <input id="searchInput" type="text" placeholder="Search (min. 3 letters)" onkeyup="initSearchPokemon()">
                 <button id="searchBtn"><img src="./assets/icons/googleFontsIcons/search.svg" alt="Lupe"
                         disabled></button>
             </div>
@@ -64,6 +63,8 @@
     <main>
         <section class="section__pokemons flexROW__xCyC">
             <div class="contentLimit content__section__pokemons">
+                <button id="muteBtn" onclick="changeMuteMode()"><img
+                        src="./assets/icons/googleFontsIcons/volume_off.svg"></button>
                 <h1>Pokémon</h1>
                 <div class="cards" id="cardsContainer">
                     <!-- Add Cards here -->
